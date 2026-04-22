@@ -1,0 +1,12 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cardContent {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 2rem;
+}

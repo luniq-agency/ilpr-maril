@@ -1,0 +1,42 @@
+.track {
+    width: 100%;
+}
+
+.wrapper {
+    backdrop-filter: contrast(0.5);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 8rem;
+    position: relative;
+    width: 100vw;
+}
+
+.wrapper::after {
+    background-color: rgba(0, 0, 0, .5);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.content {
+    color: white;
+    display: flex;
+    max-width: 1200px;
+    position: sticky;
+    top: 5rem;
+    width: 100%;
+    z-index: 4;
+}
+
+.year {
+    display: flex;
+    gap: 2rem;
+}
