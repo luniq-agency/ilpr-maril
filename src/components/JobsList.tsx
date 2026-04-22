@@ -1,9 +1,5 @@
-import { useEffect, useState } from 'react';
 import type { Jobs } from '../types/Database';
-import styles from './News.module.css';
-import api from '../app/api/axios';
 import { ENDPOINTS } from '../app/api/endpoints';
-import NewsCard from './NewsCard';
 import JobCard from './JobCard';
 
 async function getJobs(): Promise<Jobs[]> {
@@ -36,6 +32,8 @@ export default async function JobsList() {
           cta="Mehr erfahren"
           location={n.location}
           date={n.publish_date}
+          slug={n.slug}
+          excerpt={n.excerpt}
         />
       ))}
     </div>

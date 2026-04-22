@@ -4,6 +4,7 @@ export interface Jobs {
   location: string;
   organization: number;
   publish_date: Date;
+  slug: string;
   status: string;
   title: string;
 }

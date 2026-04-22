@@ -1,7 +1,5 @@
-import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
-import { ButtonPrimary } from '@/src/components/Button';
 import type { Metadata } from 'next';
 import ContactForm from '@/src/components/ContactForm';
 

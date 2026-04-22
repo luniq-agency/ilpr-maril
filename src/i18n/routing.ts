@@ -17,6 +17,10 @@ export const routing = defineRouting({
       en: '/company',
       de: '/unternehmen',
     },
+    '/job/[slug]': {
+      en: '/job/[slug]',
+      de: '/job/[slug]',
+    },
     '/company/history': {
       en: '/company/history',
       de: '/unternehmen/historie',
@@ -82,7 +86,7 @@ export const routing = defineRouting({
       de: '/kunden/finance/immobilienkaeufer',
     },
     '/clients/financial/investors': {
-      en: '/clients/financial/investoren',
+      en: '/clients/financial/investors',
       de: '/kunden/finance/investoren',
     },
     '/clients/financial/banks': {
@@ -130,16 +134,16 @@ export const routing = defineRouting({
       de: '/rechtliches/datenschutzerklaerung',
     },
     '/legal/imprint': {
-      en: 'legal/imprint',
-      de: 'rechtliches/impressum',
+      en: '/legal/imprint',
+      de: '/rechtliches/impressum',
     },
     '/legal/whistleblower': {
-      en: 'legal/whistleblower',
-      de: 'rechtliches/hinweisgeber',
+      en: '/legal/whistleblower',
+      de: '/rechtliches/hinweisgeber',
     },
     '/legal/disclaimer': {
-      en: 'legal/disclaimer',
-      de: 'rechtliches/rechtliche-hinweise',
+      en: '/legal/disclaimer',
+      de: '/rechtliches/rechtliche-hinweise',
     },
   },
 });

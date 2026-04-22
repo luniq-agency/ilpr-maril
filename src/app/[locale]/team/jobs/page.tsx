@@ -2,7 +2,6 @@ import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import LocationCard from '@/src/components/LocationCard';
 import JobsList from '@/src/components/JobsList';
 
 type PageProps = {

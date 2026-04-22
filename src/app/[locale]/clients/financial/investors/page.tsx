@@ -60,7 +60,7 @@ export default async function InvestorsPage({ params }: PageProps) {
           <span>{t('benefits-intro')}</span>
           <div style={{ height: '3rem' }} />
           <div className="grid columns-two full-width" style={{ gap: '1.5rem' }}>
-            <BenefitBox title={t('benefit-1-hl')} body={t('benefit-1-body')} />
+            <BenefitBox title={t('benefit-1-hl')} body={t('benefit-1-body')} image="" />
             <BenefitBox
               title={t('benefit-2-hl')}
               body={t('benefit-2-body')}

@@ -2,7 +2,6 @@ import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { Timeline } from '@/src/components/ui/timeline';
 import { ButtonPrimary } from '@/src/components/Button';
 
 type PageProps = {

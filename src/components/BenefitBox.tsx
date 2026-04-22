@@ -2,10 +2,11 @@
 
 import styles from './BenefitBox.module.css';
 import { motion, useInView } from 'motion/react';
+import Image from 'next/image';
 import { useRef } from 'react';
 
 interface Props {
-  image?: string;
+  image: string;
   title: string;
   body: string;
   delay?: number;
@@ -22,7 +23,7 @@ export default function BenefitBox(props: Props) {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: 'easeOut', delay: props.delay || 0 }}
     >
-      <img src={props.image} width={40} height={40} alt="" />
+      <Image src={props.image} width={40} height={40} alt="" />
       <h3 className={styles.h3}>{props.title}</h3>
       <span className={styles.body}>{props.body}</span>
     </motion.div>

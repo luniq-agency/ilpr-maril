@@ -4,14 +4,7 @@ import { useTranslations } from 'next-intl';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { useState } from 'react';
-import { ButtonPrimary } from './Button';
 import { Button } from 'primereact/button';
-
-type PageProps = {
-  params: Promise<{
-    locale: string;
-  }>;
-};
 
 export default function ContactForm() {
   const t = useTranslations('ContactForm');

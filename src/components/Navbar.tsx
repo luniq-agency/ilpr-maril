@@ -9,23 +9,17 @@ import { Sidebar } from 'primereact/sidebar';
 import DropDown from './DropDown';
 import { ButtonPrimary } from './Button';
 import { Accordion, AccordionTab } from 'primereact/accordion';
-import { motion, useInView } from 'motion/react';
 import SocialMediaIcon from './SocialMediaIcon';
 import { MenuItemSingle } from './MenuItem';
+import Image from 'next/image';
 
 interface NavbarProps {
   classname: string;
 }
 
 export default function Navbar(props: NavbarProps) {
-  const portfolio = useRef<OverlayPanel | null>(null);
-  const about = useRef<OverlayPanel | null>(null);
   const [visible, setVisible] = useState(false);
   const t = useTranslations('Nav');
-
-  const customHeader = (title: string) => {
-    return <span>{title}</span>;
-  };
 
   const itemsCompany = [
     {
@@ -222,7 +216,7 @@ export default function Navbar(props: NavbarProps) {
           className="column"
           style={{ padding: '2rem', alignItems: 'center', flexGrow: 1, justifyContent: 'center' }}
         >
-          <img src="/ilpr-maril-logo-gold.svg" alt="ILPR Maril" width={180} />
+          <Image src="/ilpr-maril-logo-gold.svg" alt="ILPR Maril" width={180} />
           <div style={{ height: '2rem' }} />
           <span
             className="navlink"
@@ -253,7 +247,7 @@ export default function Navbar(props: NavbarProps) {
       </Sidebar>
       <div className="row align-center justify-start" id="navbar-logo-wrapper">
         <Link href="/" aria-label="Link zur Homepage." className="logo-navbar">
-          <img
+          <Image
             src="/ilpr-maril-logo-gold.svg"
             alt="ILPR Maril"
             width={120}
@@ -340,7 +334,7 @@ export default function Navbar(props: NavbarProps) {
           <ButtonPrimary text={t('cta-2')} size="small" target="/contact" />
         </div>
         <div className="menu-button-wrapper" onClick={() => setVisible(true)}>
-          <img src="/icons/menu.svg" className="menu-button-icon" />
+          <Image src="/icons/menu.svg" className="menu-button-icon" alt="" />
         </div>
       </div>
     </nav>

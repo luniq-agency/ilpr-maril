@@ -3,7 +3,7 @@
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { useRef } from 'react';
 import { Link } from '@/src/i18n/routing';
-import { motion, useInView } from 'motion/react';
+import { motion } from 'motion/react';
 
 interface Link {
   label: string;

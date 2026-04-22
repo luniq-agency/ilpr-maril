@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react';
 import type { News } from '../types/Database';
 import styles from './News.module.css';
-import api from '../app/api/axios';
 import { ENDPOINTS } from '../app/api/endpoints';
 import NewsCard from './NewsCard';
 

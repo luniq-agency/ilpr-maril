@@ -9,7 +9,7 @@ export function LocaleSwitcher() {
   const pathname = usePathname();
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    router.replace(pathname, { locale: e.target.value });
+    router.replace(pathname as any, { locale: e.target.value });
   };
 
   return (

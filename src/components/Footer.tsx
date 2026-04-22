@@ -1,6 +1,7 @@
 import { Link } from '@/src/i18n/routing';
 import { useTranslations } from 'next-intl';
 import SocialMediaIcon from './SocialMediaIcon';
+import Image from 'next/image';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -10,7 +11,7 @@ export default function Footer() {
     <footer>
       <div className="content grid columns-four" id="footer-top-row">
         <div className="column">
-          <img
+          <Image
             src="/ilpr-maril-logo-gold.svg"
             width={120}
             alt="Das Maril Logo"

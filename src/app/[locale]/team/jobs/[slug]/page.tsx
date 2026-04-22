@@ -2,13 +2,13 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ENDPOINTS } from '@/src/app/api/endpoints';
 import Link from 'next/link';
-import Image from 'next/image';
 
 interface Article {
   id: number;
+  description: string;
+  publish_date: string;
   slug: string;
   title: string;
-  description: string;
   body: string;
   status: string;
   active: boolean;
@@ -36,7 +36,7 @@ async function getArticle(slug: string): Promise<Article | null> {
 }
 
 export async function generateStaticParams() {
-  const res = await fetch(`${process.env.JETADMIN_API_URL}${ENDPOINTS.BLOG}`, {
+  const res = await fetch(`${process.env.JETADMIN_API_URL}${ENDPOINTS.JOBS}`, {
     headers: {
       Authorization: `Bearer ${process.env.JETADMIN_API_KEY}`,
     },
@@ -69,7 +69,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ArticlePage({
+export default async function JobPage({
   params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
@@ -86,7 +86,7 @@ export default async function ArticlePage({
             className="column"
             style={{ maxWidth: 800, marginLeft: 'auto', marginRight: 'auto' }}
           >
-            <Image src={article.thumbnail} className="article-thumbnail" alt={article.title} />
+            <img src={article.thumbnail} className="article-thumbnail" />
             <div className="row gap-xs" style={{ marginBottom: '0.5rem' }}>
               <Link href="/news">
                 <span style={{ fontWeight: 400 }}>News</span>

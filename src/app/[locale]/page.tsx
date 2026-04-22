@@ -5,11 +5,10 @@ import type { Metadata } from 'next';
 import { TabView, TabPanel } from 'primereact/tabview';
 import NewsList from '@/src/components/NewsList';
 import Quote from '@/src/components/Quote';
-import WorldMap from '@/src/components/ui/world-map';
 import LocationsMap from '@/src/components/LocationsMap';
-import ProjectSlider from '@/src/components/ProjectSlider';
 import { ProjectCard } from '@/src/components/Card';
 import LogoLoop from '@/src/components/LogoLoop';
+import Image from 'next/image';
 
 type PageProps = {
   params: Promise<{
@@ -18,7 +17,12 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return [{ locale: 'de' }, { locale: 'en' }, { locale: 'el' }];
+  return [
+    { locale: 'de' },
+    {
+      /*{ locale: 'en' },*/
+    },
+  ];
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -159,7 +163,7 @@ export default async function HomePage({ params }: PageProps) {
             </div>
           </TabPanel>
           <TabPanel header={t('tab-3-label')}>
-            <img src="/village-people.jpeg" />
+            <Image src="/village-people.jpeg" alt="Maril Team" />
           </TabPanel>
         </TabView>
       </section>
@@ -195,7 +199,7 @@ export default async function HomePage({ params }: PageProps) {
       </section>
       <section>
         <div className="content row gap-xl mobile-column" style={{ maxWidth: 1000 }}>
-          <img
+          <Image
             src="/semun-oguz.png"
             alt="Ein Bild zeigt Semun Oguz"
             style={{
