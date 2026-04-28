@@ -7,7 +7,7 @@ export default function NewsCard(news: News) {
   return (
     <Link href={`/news/${news.slug}`}>
       <div className={styles.card}>
-        <Image src={news.thumbnail} className={styles.thumbnail} alt={news.title} />
+        <Image src={news.thumbnail} className={styles.thumbnail} alt={news.title} width={270} height={180}/>
         <div className={styles.cardContent}>
           <div className={styles.metaRow}>
             <span className={styles.meta}>{news.category}</span>

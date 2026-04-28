@@ -38,7 +38,7 @@ export default async function LocationsPage({ params }: PageProps) {
         target="#locations"
       />
       <section>
-        <div className="content">
+        <div className="content max-w-800">
           <div className="column">
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />
@@ -51,13 +51,29 @@ export default async function LocationsPage({ params }: PageProps) {
         </div>
       </section>
       <section id="locations">
-        <div className="content">
+        <div className="content max-w-1200">
+          <span className="tag">{t('locations-tag')}</span>
           <h2>{t('locations-h2')}</h2>
-          <div style={{ height: '1.5rem' }} />
+          <div style={{ height: '3rem' }} />
           <div className="grid columns-three gap-l">
-            <LocationCard title={t('didim')} body={t('didim-about')} image="" />
-            <LocationCard title={t('nice')} body={t('nice-about')} image="" />
-            <LocationCard title={t('miami')} body={t('miami-about')} image="" />
+            <LocationCard
+              title={t('didim')}
+              body={t('didim-about')}
+              image="/locations/didim.jpg"
+              delay={0.35}
+            />
+            <LocationCard
+              title={t('nice')}
+              body={t('nice-about')}
+              image="/locations/nice.jpg"
+              delay={0.75}
+            />
+            <LocationCard
+              title={t('miami')}
+              body={t('miami-about')}
+              image="/locations/miami.jpg"
+              delay={1.15}
+            />
           </div>
         </div>
       </section>

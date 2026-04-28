@@ -26,8 +26,12 @@ html {
   padding: 1rem 0rem !important;
 }
 
-.align-left {
+.align-baseline {
   align-items: baseline !important;
+}
+
+.align-left {
+  align-items: start !important;
 }
 
 .align-start {
@@ -45,8 +49,11 @@ article {
 
 body {
   color: var(--text-color-primary);
+  display: flex;
+  flex-direction: column;
   font-family: "Geist", Helvetica, sans-serif;
   font-weight: 300;
+  min-height: 100vh;
 }
 
 .body-l {
@@ -256,6 +263,18 @@ label {
   z-index: 3;
 }
 
+main {
+  flex-grow: 1;
+}
+
+.max-w-1000 {
+  max-width: 1000px;
+}
+
+.max-w-1200 {
+  max-width: 1200px;
+}
+
 .menu-button-wrapper {
   display: none;
 }
@@ -283,6 +302,10 @@ p {
 
 .logo-navbar {
   width: 120px;
+}
+
+.max-w-800 {
+  max-width: 800px;
 }
 
 .navbar-wrapper {
@@ -550,6 +573,7 @@ section {
   letter-spacing: -0.05em;
   text-align: center;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .text-columns {
@@ -569,6 +593,11 @@ section {
 
   .accordion-inner>.p-accordion-tab>.p-toggleable-content>.p-accordion-content {
     padding: 1.5rem 0rem;
+  }
+
+  .body-l {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
   }
 
   .content {

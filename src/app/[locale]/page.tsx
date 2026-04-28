@@ -163,7 +163,7 @@ export default async function HomePage({ params }: PageProps) {
             </div>
           </TabPanel>
           <TabPanel header={t('tab-3-label')}>
-            <Image src="/village-people.jpeg" alt="Maril Team" />
+            <Image src="/village-people.jpeg" alt="Maril Team" width={900} height={600} />
           </TabPanel>
         </TabView>
       </section>
@@ -202,6 +202,8 @@ export default async function HomePage({ params }: PageProps) {
           <Image
             src="/semun-oguz.png"
             alt="Ein Bild zeigt Semun Oguz"
+            height={500}
+            width={400}
             style={{
               width: '100%',
               maxWidth: 400,

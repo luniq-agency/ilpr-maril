@@ -38,7 +38,7 @@ export default async function JobsPage({ params }: PageProps) {
         target="#jobs"
       />
       <section>
-        <div className="content">
+        <div className="content max-w-800">
           <div className="column">
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />

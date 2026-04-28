@@ -2,7 +2,6 @@ import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { TeamCard } from '@/src/components/TeamCard';
 
 type PageProps = {
   params: Promise<{
@@ -33,20 +32,15 @@ export default async function TeamPage({ params }: PageProps) {
       <HeroSection
         headline={t('h1')}
         intro={t('intro')}
-        image="/backgrounds/team.png"
+        image="/vision-ilpr-maril.png"
         cta={t('cta')}
         target="#team"
       />
       <section id="team">
-        <div className="content max-w-1000">
+        <div className="content">
           <div className="column">
             <h2>{t('h2')}</h2>
-            <div style={{ height: '3rem' }} />
-            <div className="grid columns-three gap-xl">
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
-            </div>
+            <div style={{ height: '1.5rem' }} />
           </div>
         </div>
       </section>

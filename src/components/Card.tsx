@@ -10,7 +10,7 @@ interface Props {
 export function ProjectCard(props: Props) {
   return (
     <div className={styles.card}>
-      <Image src={props.image} alt="" />
+      <Image className={styles.image} src={props.image} alt="" width={270} height={180} />
       <div className={styles.cardContent}>
         <h3 style={{ textAlign: 'center', marginBottom: 8, fontSize: '1.5rem' }}>{props.title}</h3>
         <span style={{ textAlign: 'center' }}>{props.body}</span>

@@ -10,3 +10,10 @@
     flex-direction: column;
     padding: 2.5rem 2rem;
 }
+
+.image {
+    height: 250px;
+    max-height: 250px;
+    object-fit: cover;
+    width: 100%;
+}

@@ -39,7 +39,7 @@ export default async function BusinessModelPage({ params }: PageProps) {
         target="#historie"
       />
       <section>
-        <div className="content">
+        <div className="content max-w-800">
           <div className="column">
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />

@@ -80,7 +80,26 @@ export default async function JobPage({
 
   return (
     <main>
-      <section></section>
+      <section>
+        <article>
+          <div
+            className="column"
+            style={{ maxWidth: 800, marginLeft: 'auto', marginRight: 'auto' }}
+          >
+            <img src={article.thumbnail} className="article-thumbnail" />
+            <div className="row gap-xs" style={{ marginBottom: '0.5rem' }}>
+              <Link href="/news">
+                <span style={{ fontWeight: 400 }}>News</span>
+              </Link>
+              <span>•</span>
+              <span style={{ color: 'black' }}>{article.title}</span>
+            </div>
+            <h1 className="article-h1">{article.title}</h1>
+            <div className="row gap-xs"></div>
+            <div dangerouslySetInnerHTML={{ __html: article.body }} />
+          </div>
+        </article>
+      </section>
     </main>
   );
 }

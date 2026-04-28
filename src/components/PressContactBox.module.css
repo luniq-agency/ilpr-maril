@@ -1,0 +1,21 @@
+.wrapper {
+    align-items: center;
+    border: 1px solid var(--accent);
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.image {
+    aspect-ratio: 2/3;
+    border: 1px solid var(--accent);
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.link {
+    line-height: 1.2em;
+    margin-top: 1rem;
+    text-decoration: underline;
+}

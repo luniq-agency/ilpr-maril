@@ -10,7 +10,7 @@ import DropDown from './DropDown';
 import { ButtonPrimary } from './Button';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import SocialMediaIcon from './SocialMediaIcon';
-import { MenuItemSingle } from './MenuItem';
+import { MenuItemSingle, MenuItemTripple } from './MenuItem';
 import Image from 'next/image';
 
 interface NavbarProps {
@@ -21,6 +21,60 @@ export default function Navbar(props: NavbarProps) {
   const [visible, setVisible] = useState(false);
   const t = useTranslations('Nav');
 
+  const itemsClientsBusiness = [
+    {
+      label: t('travel-agencies'),
+      destination: '/clients/business/travel-agencies',
+    },
+    {
+      label: t('booking-portals'),
+      destination: '/clients/business/booking-portals',
+    },
+    {
+      label: t('elderly-care'),
+      destination: '/clients/business/elderly-care',
+    },
+    {
+      label: t('medical-care'),
+      destination: '/clients/business/medical-care',
+    },
+  ];
+  const itemsClientsFinancial = [
+    {
+      label: t('real-estate-agents'),
+      destination: '/clients/financial/real-estate-agents',
+    },
+    {
+      label: t('real-estate-buyers'),
+      destination: '/clients/financial/real-estate-buyers',
+    },
+    {
+      label: t('investors'),
+      destination: '/clients/financial/investors',
+    },
+    {
+      label: t('banks'),
+      destination: '/clients/financial/banks',
+    },
+  ];
+  const itemsClientsRetail = [
+    {
+      label: t('tourists'),
+      destination: '/clients/retail/tourists',
+    },
+    {
+      label: t('groups'),
+      destination: '/clients/retail/groups',
+    },
+    {
+      label: t('patients'),
+      destination: '/clients/retail/patients',
+    },
+    {
+      label: t('longterm'),
+      destination: '/clients/retail/longterm',
+    },
+  ];
   const itemsCompany = [
     {
       label: t('company'),
@@ -39,7 +93,24 @@ export default function Navbar(props: NavbarProps) {
       destination: '/company/locations',
     },
   ];
-
+  const itemsPress = [
+    {
+      label: t('press'),
+      destination: '/press',
+    },
+    {
+      label: t('press-contact'),
+      destination: '/press/contact',
+    },
+    {
+      label: t('press-kit'),
+      destination: '/press/press-kit',
+    },
+    {
+      label: t('press-faq'),
+      destination: '/press/faq',
+    },
+  ];
   const itemsTeam = [
     {
       label: t('team'),
@@ -56,25 +127,6 @@ export default function Navbar(props: NavbarProps) {
     {
       label: t('jobs'),
       destination: '/team/jobs',
-    },
-  ];
-
-  const itemsPress = [
-    {
-      label: t('press'),
-      destination: '/press',
-    },
-    {
-      label: t('press-contact'),
-      destination: '/press/vision',
-    },
-    {
-      label: t('press-kit'),
-      destination: '/press/press-kit',
-    },
-    {
-      label: t('press-faq'),
-      destination: '/press/faq',
     },
   ];
 
@@ -251,6 +303,7 @@ export default function Navbar(props: NavbarProps) {
             src="/ilpr-maril-logo-gold.svg"
             alt="ILPR Maril"
             width={120}
+            height={32}
             className="logo-navbar"
           />
         </Link>
@@ -259,6 +312,16 @@ export default function Navbar(props: NavbarProps) {
       <div className="row full-width align-center gap-l" id="navmenu-desktop">
         <MenuItemSingle label={t('company')} links={itemsCompany} />
         <MenuItemSingle label={t('team')} links={itemsTeam} />
+        <MenuItemTripple
+          label={t('clients')}
+          links={itemsClientsRetail}
+          links2={itemsClientsBusiness}
+          links3={itemsClientsFinancial}
+          linksLabel={t('clients-retail')}
+          linksLabel2={t('clients-business')}
+          linksLabel3={t('clients-financial')}
+        />
+        {/*
         <DropDown title={t('clients')}>
           <div className="row gap-l">
             <div className="column gap-s">
@@ -316,12 +379,15 @@ export default function Navbar(props: NavbarProps) {
             </div>
           </div>
         </DropDown>
+
         <Link href="/network" className="navlink">
           {t('network')}
         </Link>
+
         <Link href="/activities" className="navlink">
           {t('activities')}
         </Link>
+        */}
         <MenuItemSingle label={t('press')} links={itemsPress} />
       </div>
       <div
@@ -334,7 +400,7 @@ export default function Navbar(props: NavbarProps) {
           <ButtonPrimary text={t('cta-2')} size="small" target="/contact" />
         </div>
         <div className="menu-button-wrapper" onClick={() => setVisible(true)}>
-          <Image src="/icons/menu.svg" className="menu-button-icon" alt="" />
+          <Image src="/icons/menu.svg" className="menu-button-icon" alt="" height={24} width={24} />
         </div>
       </div>
     </nav>

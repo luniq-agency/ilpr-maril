@@ -14,6 +14,7 @@ export default function Footer() {
           <Image
             src="/ilpr-maril-logo-gold.svg"
             width={120}
+            height={32}
             alt="Das Maril Logo"
             style={{ marginBottom: 24 }}
           />

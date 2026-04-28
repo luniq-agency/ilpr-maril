@@ -2,7 +2,6 @@ import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { TeamCard } from '@/src/components/TeamCard';
 
 type PageProps = {
   params: Promise<{
@@ -12,7 +11,7 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations('Team');
+  const t = await getTranslations('PressFaq');
   return {
     title: t('title'),
     description: t('description'),
@@ -23,30 +22,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function TeamPage({ params }: PageProps) {
+export default async function PressFaqPage({ params }: PageProps) {
   const { locale } = await params;
 
   setRequestLocale(locale);
-  const t = await getTranslations('Team');
+  const t = await getTranslations('PressFaq');
   return (
     <main>
       <HeroSection
         headline={t('h1')}
         intro={t('intro')}
-        image="/backgrounds/team.png"
+        image="/vision-ilpr-maril.png"
         cta={t('cta')}
-        target="#team"
+        target="#historie"
       />
-      <section id="team">
-        <div className="content max-w-1000">
-          <div className="column">
+      <section>
+        <div className="content" style={{ alignItems: 'baseline' }}>
+          <div className="column" style={{ maxWidth: 640 }}>
             <h2>{t('h2')}</h2>
-            <div style={{ height: '3rem' }} />
-            <div className="grid columns-three gap-xl">
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
-            </div>
+            <div style={{ height: '1.5rem' }} />
+            <p>{t('p-1')}</p>
+            <p>{t('p-2')}</p>
+            <p>{t('p-3')}</p>
+            <p>{t('p-4')}</p>
+            <p>{t('p-5')}</p>
           </div>
         </div>
       </section>

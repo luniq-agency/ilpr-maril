@@ -1,0 +1,16 @@
+.card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.image {
+    border: 1px solid var(--accent);
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.role {
+    font-size: 0.8rem;
+}

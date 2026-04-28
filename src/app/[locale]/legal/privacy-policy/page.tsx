@@ -2,6 +2,7 @@ import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { TeamCard } from '@/src/components/TeamCard';
 
 type PageProps = {
   params: Promise<{
@@ -11,7 +12,7 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations('Team');
+  const t = await getTranslations('PrivacyPolicy');
   return {
     title: t('title'),
     description: t('description'),
@@ -22,30 +23,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function CsrPage({ params }: PageProps) {
+export default async function PrivacyPolicyPage({ params }: PageProps) {
   const { locale } = await params;
 
   setRequestLocale(locale);
-  const t = await getTranslations('CSR');
+  const t = await getTranslations('PrivacyPolicy');
   return (
     <main>
-      <HeroSection
-        headline={t('h1')}
-        intro={t('intro')}
-        image="/csr.png"
-        cta={t('cta')}
-        target="#werte"
-      />
-      <section id="werte">
-        <div className="content max-w-800">
-          <div className="column">
-            <h2>{t('h2')}</h2>
-            <div style={{ height: '1.5rem' }} />
-            <p>{t('p-1')}</p>
-            <p>{t('p-2')}</p>
-            <p>{t('p-3')}</p>
-            <p>{t('p-4')}</p>
-          </div>
+      <section style={{ paddingTop: '10rem' }}>
+        <div className="content align-left">
+          <h1 style={{ textAlign: 'left' }}>{t('h1')}</h1>
         </div>
       </section>
     </main>
