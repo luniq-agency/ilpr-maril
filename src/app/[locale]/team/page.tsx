@@ -10,8 +10,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Team');
   return {
     title: t('title'),
@@ -28,19 +27,30 @@ export default async function TeamPage({ params }: PageProps) {
 
   setRequestLocale(locale);
   const t = await getTranslations('Team');
+  const paragraphs = t.raw('paragraphs') as string[];
+
   return (
     <main>
       <HeroSection
         headline={t('h1')}
         intro={t('intro')}
-        image="/backgrounds/team.png"
+        image="/backgrounds/team.webp"
         cta={t('cta')}
         target="#team"
       />
       <section id="team">
         <div className="content max-w-1000">
           <div className="column">
-            <h2>{t('h2')}</h2>
+            <h2>{t('intro-h2')}</h2>
+            <div style={{ height: '1.5rem' }} />
+            {paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+            <div style={{ height: '3rem' }} />
+            <div className="column align-center">
+              <span className="tag">{t('team-tag')}</span>
+              <h2 style={{ textAlign: 'center' }}>{t('team-h2')}</h2>
+            </div>
             <div style={{ height: '3rem' }} />
             <div className="grid columns-three gap-xl">
               <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />

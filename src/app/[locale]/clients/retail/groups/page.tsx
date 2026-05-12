@@ -2,6 +2,7 @@ import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import LinkBlock from '@/src/components/LinkBlock';
 
 type PageProps = {
   params: Promise<{
@@ -9,8 +10,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Groups');
   return {
     title: t('title'),
@@ -34,10 +34,10 @@ export default async function GroupsPage({ params }: PageProps) {
         intro={t('intro')}
         image="/groups.png"
         cta={t('cta')}
-        target="#team"
+        target="#about"
       />
-      <section id="team">
-        <div className="content">
+      <section id="about">
+        <div className="content" style={{ maxWidth: 800 }}>
           <div className="column">
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />
@@ -47,6 +47,11 @@ export default async function GroupsPage({ params }: PageProps) {
             <p>{t('p-4')}</p>
             <p>{t('p-5')}</p>
             <p>{t('p-6')}</p>
+            <div style={{ height: '1.5rem' }} />
+            <div className="column gap-s">
+              <LinkBlock text={t('link-vision')} target="/team/vision" />
+              <LinkBlock text={t('link-contact')} target="/contact/" />
+            </div>
           </div>
         </div>
       </section>

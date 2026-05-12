@@ -26,7 +26,7 @@ export default function HeroSection(props: Props) {
         {props.intro}
       </span>
       <div style={{ zIndex: 4 }}>
-        <ButtonSecondary text={props.cta} target={props.target} size="large" />
+        <ButtonSecondary text={props.cta} target={props.target} size="medium" />
       </div>
     </section>
   );

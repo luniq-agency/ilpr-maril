@@ -9,8 +9,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Buyers');
   return {
     title: t('title'),
@@ -27,26 +26,25 @@ export default async function BuyersPage({ params }: PageProps) {
 
   setRequestLocale(locale);
   const t = await getTranslations('Buyers');
+  const paragraphs = t.raw('paragraphs') as string[];
+
   return (
     <main>
       <HeroSection
         headline={t('h1')}
         intro={t('intro')}
-        image="/groups.png"
+        image="/backgrounds/real-estate-buyers.png"
         cta={t('cta')}
         target="#team"
       />
       <section id="team">
-        <div className="content">
+        <div className="content" style={{ maxWidth: 800 }}>
           <div className="column">
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />
-            <p>{t('p-1')}</p>
-            <p>{t('p-2')}</p>
-            <p>{t('p-3')}</p>
-            <p>{t('p-4')}</p>
-            <p>{t('p-5')}</p>
-            <p>{t('p-6')}</p>
+            {paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
         </div>
       </section>

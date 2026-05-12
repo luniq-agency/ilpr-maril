@@ -10,9 +10,8 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations('Elderly Care');
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('ElderlyCare');
   return {
     title: t('title'),
     description: t('description'),
@@ -23,31 +22,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function BuyersPage({ params }: PageProps) {
+export default async function ElderlyCarePage({ params }: PageProps) {
   const { locale } = await params;
 
   setRequestLocale(locale);
-  const t = await getTranslations('Elderly Care');
+  const t = await getTranslations('ElderlyCare');
   return (
     <main>
       <HeroSection
         headline={t('h1')}
         intro={t('intro')}
-        image="/groups.png"
+        image="/backgrounds/elderly-care.png"
         cta={t('cta')}
         target="#team"
       />
       <section id="team">
-        <div className="content">
+        <div className="content" style={{ maxWidth: 800 }}>
           <div className="column">
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />
             <p>{t('p-1')}</p>
             <p>{t('p-2')}</p>
-            <p>{t('p-3')}</p>
-            <p>{t('p-4')}</p>
-            <p>{t('p-5')}</p>
-            <p>{t('p-6')}</p>
             <div style={{ height: '1rem' }} />
             <ButtonPrimary text={t('cta-2')} target="/contact" size="medium" />
           </div>

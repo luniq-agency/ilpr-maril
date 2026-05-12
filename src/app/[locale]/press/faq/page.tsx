@@ -1,7 +1,8 @@
-import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { Accordion, AccordionTab } from 'primereact/accordion';
+import LinkBlock from '@/src/components/LinkBlock';
 
 type PageProps = {
   params: Promise<{
@@ -9,8 +10,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('PressFaq');
   return {
     title: t('title'),
@@ -22,30 +22,66 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function PressFaqPage({ params }: PageProps) {
+export default async function CsrPage({ params }: PageProps) {
   const { locale } = await params;
 
   setRequestLocale(locale);
   const t = await getTranslations('PressFaq');
+
+  const faqItems = [
+    {
+      q: t('q-1'),
+      a: t('a-1'),
+    },
+    {
+      q: t('q-2'),
+      a: t('a-2'),
+    },
+    {
+      q: t('q-2'),
+      a: t('a-2'),
+    },
+    {
+      q: t('q-2'),
+      a: t('a-2'),
+    },
+    {
+      q: t('q-2'),
+      a: t('a-2'),
+    },
+  ];
   return (
-    <main>
-      <HeroSection
-        headline={t('h1')}
-        intro={t('intro')}
-        image="/vision-ilpr-maril.png"
-        cta={t('cta')}
-        target="#historie"
-      />
-      <section>
-        <div className="content" style={{ alignItems: 'baseline' }}>
-          <div className="column" style={{ maxWidth: 640 }}>
-            <h2>{t('h2')}</h2>
+    <main style={{ minHeight: '100vh' }}>
+      <section style={{ paddingTop: '10rem', paddingBottom: '5rem' }}>
+        <div />
+        <div className="content  gap-l" style={{ maxWidth: 1000 }}>
+          <div className="column full-width">
+            <h1 style={{ textAlign: 'left' }}>{t('h1')}</h1>
+            <span>{t('intro')}</span>
+          </div>
+          <div className="column full-width gap-l">
+            <Accordion>
+              {faqItems.map((f, i) => (
+                <AccordionTab
+                  header={f.q}
+                  key={i}
+                  headerClassName="faq-header"
+                  style={{ marginBottom: 8 }}
+                >
+                  <span>{f.a}</span>
+                </AccordionTab>
+              ))}
+            </Accordion>
+          </div>
+          <div style={{ height: '3rem' }} />
+          <div className="column full-width">
+            <h2>{t('more-h2')}</h2>
+            <span>{t('more-info')}</span>
             <div style={{ height: '1.5rem' }} />
-            <p>{t('p-1')}</p>
-            <p>{t('p-2')}</p>
-            <p>{t('p-3')}</p>
-            <p>{t('p-4')}</p>
-            <p>{t('p-5')}</p>
+            <div className="column full-width gap-m">
+              <LinkBlock text={t('press-contact')} target="/press/contact" />
+              <LinkBlock text={t('press-kit')} target="/press/press-kit" />
+            </div>
           </div>
         </div>
       </section>

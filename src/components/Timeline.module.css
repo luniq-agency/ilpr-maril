@@ -1,3 +1,10 @@
+.ball {
+    background-color: var(--accent);
+    border-radius: 200px;
+    height: 16px;
+    width: 16px;
+}
+
 .track {
     width: 100%;
 }

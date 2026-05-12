@@ -167,7 +167,7 @@ export default function WorldMap({ dots = [], lineColor = '#0ea5e9' }: MapProps)
             transform: 'translate(-50%, -160%)',
           }}
         >
-          {tooltip.label}
+          <span style={{ fontSize: '1.2rem' }}>{tooltip.label}</span>
         </motion.div>
       )}
     </div>

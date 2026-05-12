@@ -12,8 +12,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Agents');
   return {
     title: t('title'),
@@ -60,7 +59,11 @@ export default async function AgentsPage({ params }: PageProps) {
           <span>{t('benefits-intro')}</span>
           <div style={{ height: '3rem' }} />
           <div className="grid columns-two full-width" style={{ gap: '1.5rem' }}>
-            <BenefitBox title={t('benefit-1-hl')} body={t('benefit-1-body')} image="" />
+            <BenefitBox
+              title={t('benefit-1-hl')}
+              body={t('benefit-1-body')}
+              image="/icons/cooperation.svg"
+            />
             <BenefitBox
               title={t('benefit-2-hl')}
               body={t('benefit-2-body')}

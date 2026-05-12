@@ -26,9 +26,9 @@ export default function LocationCard(props: Props) {
         height={200}
         className={styles.image}
       />
-      <div className={styles.cardContent}>
+      <div className={styles.cardContent} style={{ padding: '2rem' }}>
         <h3 style={{ textAlign: 'center', marginBottom: 8 }}>{props.title}</h3>
-        <p style={{ textAlign: 'center', marginBlockEnd: 0 }}>{props.body}</p>
+        <p style={{ fontSize: '14px', textAlign: 'center', marginBlockEnd: 0 }}>{props.body}</p>
       </div>
     </motion.div>
   );

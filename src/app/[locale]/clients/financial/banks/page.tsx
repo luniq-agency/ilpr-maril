@@ -2,7 +2,6 @@ import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import BenefitBox from '@/src/components/BenefitBox';
 import { ButtonPrimary } from '@/src/components/Button';
 import ScrollBlock from '@/src/components/ScrollBlock';
 
@@ -12,8 +11,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Banks');
   return {
     title: t('title'),
@@ -54,46 +52,6 @@ export default async function BanksPage({ params }: PageProps) {
         </div>
       </section>
       <ScrollBlock image="/banks-2.jpg" />
-      <section id="vorteile">
-        <div className="content">
-          <h2 style={{ marginBottom: 8 }}>{t('benefits-h2')}</h2>
-          <span>{t('benefits-intro')}</span>
-          <div style={{ height: '3rem' }} />
-          <div className="grid columns-two full-width" style={{ gap: '1.5rem' }}>
-            <BenefitBox title={t('benefit-1-hl')} body={t('benefit-1-body')} image="" />
-            <BenefitBox
-              title={t('benefit-2-hl')}
-              body={t('benefit-2-body')}
-              image="/icons/revenue-split.svg"
-              delay={0.5}
-            />
-            <BenefitBox
-              title={t('benefit-3-hl')}
-              body={t('benefit-3-body')}
-              image="/icons/information.svg"
-              delay={1}
-            />
-            <BenefitBox
-              title={t('benefit-4-hl')}
-              body={t('benefit-4-body')}
-              image="/icons/handshake.svg"
-              delay={1.5}
-            />
-            <BenefitBox
-              title={t('benefit-5-hl')}
-              body={t('benefit-5-body')}
-              image="/icons/handshake.svg"
-              delay={2}
-            />
-            <BenefitBox
-              title={t('benefit-6-hl')}
-              body={t('benefit-6-body')}
-              image="/icons/handshake.svg"
-              delay={2.5}
-            />
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

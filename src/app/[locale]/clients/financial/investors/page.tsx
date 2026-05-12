@@ -12,8 +12,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Investors');
   return {
     title: t('title'),
@@ -60,23 +59,27 @@ export default async function InvestorsPage({ params }: PageProps) {
           <span>{t('benefits-intro')}</span>
           <div style={{ height: '3rem' }} />
           <div className="grid columns-two full-width" style={{ gap: '1.5rem' }}>
-            <BenefitBox title={t('benefit-1-hl')} body={t('benefit-1-body')} image="" />
+            <BenefitBox
+              title={t('benefit-1-hl')}
+              body={t('benefit-1-body')}
+              image="/icons/globe.svg"
+            />
             <BenefitBox
               title={t('benefit-2-hl')}
               body={t('benefit-2-body')}
-              image="/icons/revenue-split.svg"
+              image="/icons/accessible.svg"
               delay={0.5}
             />
             <BenefitBox
               title={t('benefit-3-hl')}
               body={t('benefit-3-body')}
-              image="/icons/information.svg"
+              image="/icons/handshake.svg"
               delay={1}
             />
             <BenefitBox
               title={t('benefit-4-hl')}
               body={t('benefit-4-body')}
-              image="/icons/handshake.svg"
+              image="/icons/growth.svg"
               delay={1.5}
             />
           </div>

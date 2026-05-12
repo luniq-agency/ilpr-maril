@@ -11,9 +11,32 @@
     padding: 2.5rem 2rem;
 }
 
+.cardSolid {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .image {
     height: 250px;
     max-height: 250px;
     object-fit: cover;
+    width: 100%;
+}
+
+.imageContain {
+    background-color: var(--background);
+    height: 200px;
+    object-fit: contain;
+    padding: 2rem;
+    width: 100%;
+}
+
+.inverted {
+    filter: invert(1);
+    height: 200px;
+    object-fit: contain;
+    padding: 2rem;
     width: 100%;
 }

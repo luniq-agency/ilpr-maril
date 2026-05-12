@@ -10,8 +10,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Jobs');
   return {
     title: t('title'),
@@ -33,7 +32,7 @@ export default async function JobsPage({ params }: PageProps) {
       <HeroSection
         headline={t('h1')}
         intro={t('intro')}
-        image="/backgrounds/locations.png"
+        image="/backgrounds/jobs.png"
         cta={t('cta')}
         target="#jobs"
       />

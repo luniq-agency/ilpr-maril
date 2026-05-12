@@ -1,8 +1,8 @@
-import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import JobsList from '@/src/components/JobsList';
+import { PressKitRequest } from '@/src/components/ContactForm';
+import { ButtonPrimary } from '@/src/components/Button';
 
 type PageProps = {
   params: Promise<{
@@ -10,9 +10,8 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations('Jobs');
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('PressKit');
   return {
     title: t('title'),
     description: t('description'),
@@ -23,39 +22,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function JobsPage({ params }: PageProps) {
+export default async function PresskitPage({ params }: PageProps) {
   const { locale } = await params;
 
   setRequestLocale(locale);
-  const t = await getTranslations('Jobs');
+  const t = await getTranslations('PressKit');
   return (
     <main>
-      <HeroSection
-        headline={t('h1')}
-        intro={t('intro')}
-        image="/backgrounds/locations.png"
-        cta={t('cta')}
-        target="#jobs"
-      />
-      <section>
-        <div className="content">
-          <div className="column">
-            <h2>{t('h2')}</h2>
-            <div style={{ height: '1.5rem' }} />
-            <p>{t('p-1')}</p>
-            <p>{t('p-2')}</p>
-            <p>{t('p-3')}</p>
-            <p>{t('p-4')}</p>
-            <p>{t('p-5')}</p>
+      <section className="hero-section-single">
+        <div style={{ height: '2rem' }} />
+        <div className="content row mobile-column gap-l align-start" style={{ maxWidth: 1000 }}>
+          <div className="column full-width">
+            <h1 style={{ textAlign: 'left' }}>{t('h1')}</h1>
+            <p>{t('intro')}</p>
+            <p>{t('intro-2')}</p>
+            <ButtonPrimary text={t('cta-link')} target="/press/contact" size="small" />
+            <div style={{ height: '2rem' }} />
           </div>
-        </div>
-      </section>
-      <section id="jobs" className="section-alternative">
-        <div className="content">
-          <span className="tag">{t('jobs-tag')}</span>
-          <h2>{t('jobs-h2')}</h2>
-          <div style={{ height: '2.5rem' }} />
-          <JobsList />
+          <div style={{ width: '100%', maxWidth: 400 }}>
+            <PressKitRequest />
+          </div>
         </div>
       </section>
     </main>

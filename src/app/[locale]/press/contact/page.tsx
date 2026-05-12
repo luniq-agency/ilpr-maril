@@ -1,4 +1,3 @@
-import HeroSection from '@/src/components/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
@@ -10,8 +9,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('PressContact');
   return {
     title: t('title'),
@@ -30,7 +28,7 @@ export default async function CsrPage({ params }: PageProps) {
   const t = await getTranslations('PressContact');
   return (
     <main>
-      <section style={{ paddingTop: '10rem', paddingBottom: '5rem' }}>
+      <section className="hero-section-single">
         <div />
         <div className="content  gap-l" style={{ maxWidth: 1000 }}>
           <div className="column full-width">

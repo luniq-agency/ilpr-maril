@@ -33,6 +33,10 @@ export const routing = defineRouting({
       en: '/company/locations',
       de: '/unternehmen/standorte',
     },
+    '/company/faq': {
+      en: '/company/faq',
+      de: '/unternehmen/faq',
+    },
     '/team': {
       en: '/team',
       de: '/team',
@@ -99,7 +103,7 @@ export const routing = defineRouting({
     },
     '/clients/business/booking-portals': {
       en: '/clients/business/booking-portals',
-      de: '/kunden/business/buchungsportal',
+      de: '/kunden/business/buchungsportale',
     },
     '/clients/business/elderly-care': {
       en: '/clients/business/elderly-care',

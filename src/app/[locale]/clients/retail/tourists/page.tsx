@@ -9,8 +9,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Tourists');
   return {
     title: t('title'),
@@ -38,7 +37,7 @@ export default async function TouristsPage({ params }: PageProps) {
       />
       <section id="team">
         <div className="content">
-          <div className="column">
+          <div className="column" style={{ maxWidth: 800 }}>
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />
             <p>{t('p-1')}</p>

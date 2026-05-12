@@ -1,54 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { ENDPOINTS } from '@/src/app/api/endpoints';
-import Link from 'next/link';
-
-interface Article {
-  id: number;
-  description: string;
-  publish_date: string;
-  slug: string;
-  title: string;
-  body: string;
-  status: string;
-  active: boolean;
-  organization: string;
-  thumbnail: string;
-}
-
-async function getArticle(slug: string): Promise<Article | null> {
-  const res = await fetch(
-    `${process.env.JETADMIN_API_URL}${ENDPOINTS.BLOG}?slug__in=${slug}&organization__in=${process.env.ORGANIZATION_ID!}`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.JETADMIN_API_KEY}`,
-      },
-      next: { revalidate: 60 },
-    }
-  );
-
-  if (!res.ok) return null;
-
-  const data = await res.json();
-  const article = data.results?.[0];
-
-  return article ?? null;
-}
-
-export async function generateStaticParams() {
-  const res = await fetch(`${process.env.JETADMIN_API_URL}${ENDPOINTS.JOBS}`, {
-    headers: {
-      Authorization: `Bearer ${process.env.JETADMIN_API_KEY}`,
-    },
-  });
-  const data = await res.json();
-
-  if (!data.results) return [];
-
-  return data.results.map((article: Article) => ({
-    slug: String(article.slug), // explizit als String
-  }));
-}
+import { jobLoadBySlug } from '@/src/actions/jobs';
+import SocialMediaIcon from '@/src/components/SocialMediaIcon';
 
 export async function generateMetadata({
   params,
@@ -56,7 +9,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = await getArticle(slug);
+  const article = await jobLoadBySlug(slug);
   if (!article) return {};
 
   return {
@@ -75,12 +28,34 @@ export default async function JobPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { slug } = await params;
-  const article = await getArticle(slug);
+  const article = await jobLoadBySlug(slug);
   if (!article) notFound();
 
   return (
     <main>
-      <section></section>
+      <section style={{ padding: '8rem 0rem 8rem 0rem' }}>
+        <div className="content row gap-l">
+          <div className="row full-width">
+            <div className="column" style={{ maxWidth: 800 }}>
+              <h1 className="article-h1">{article.title}</h1>
+              <div className="spacer-m" />
+              <div dangerouslySetInnerHTML={{ __html: article.description }} />
+            </div>
+          </div>
+          <div className="news-sidebar">
+            <div className="column">
+              <span>Diesen Job teilen</span>
+              <div className="spacer-s" />
+              <div className="row">
+                <SocialMediaIcon
+                  image="/instagram.svg"
+                  target={`https://instagram.com/${process.env.INSTAGRAM}`}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

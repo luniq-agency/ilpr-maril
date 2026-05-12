@@ -10,8 +10,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Locations');
   return {
     title: t('title'),
@@ -55,7 +54,7 @@ export default async function LocationsPage({ params }: PageProps) {
           <span className="tag">{t('locations-tag')}</span>
           <h2>{t('locations-h2')}</h2>
           <div style={{ height: '3rem' }} />
-          <div className="grid columns-three gap-l">
+          <div className="grid columns-three gap-l" style={{ gridTemplateRows: '1fr' }}>
             <LocationCard
               title={t('didim')}
               body={t('didim-about')}

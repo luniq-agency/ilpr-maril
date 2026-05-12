@@ -9,7 +9,16 @@
     width: 100%;
 }
 
+.wrapper>img {
+    transition: all 0.3s ease-out;
+}
+
 .wrapper:hover {
     background-color: var(--accent);
     color: var(--background);
+}
+
+
+.wrapper:hover>img {
+    filter: invert(1);
 }

@@ -10,9 +10,8 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations('BusinessModel'); // z.B. messages/{locale}.json -> Meta.title / Meta.description
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('BusinessModel');
 
   return {
     title: t('title'),
@@ -34,7 +33,7 @@ export default async function BusinessModelPage({ params }: PageProps) {
       <HeroSection
         headline={t('h1')}
         intro={t('intro')}
-        image="/backgrounds/history.jpg"
+        image="/backgrounds/business-model.jpg"
         cta={t('cta')}
         target="#historie"
       />

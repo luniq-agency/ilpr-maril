@@ -25,9 +25,8 @@ export function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations('Home'); // z.B. messages/{locale}.json -> Meta.title / Meta.description
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('Home');
 
   return {
     title: t('title'),
@@ -144,6 +143,7 @@ export default async function HomePage({ params }: PageProps) {
         <div className="content">
           <span className="tag">{t('intro-tag')}</span>
           <h2>{t('intro-h2')}</h2>
+          <div style={{ height: '1rem' }} />
           <span className="body-l" style={{ maxWidth: 640, textAlign: 'center' }}>
             {t('intro-text')}
           </span>
@@ -170,13 +170,14 @@ export default async function HomePage({ params }: PageProps) {
       <section className="section-alternative">
         <div className="content">
           <span className="tag">{t('vision-tag')}</span>
-          <span className="quote" style={{ maxWidth: 640 }}>
+          <span className="quote" style={{ maxWidth: 760, fontSize: '2rem' }}>
             {t('vision-h2')}
           </span>
           <div className="spacer-l" />
-          <ButtonSecondary text={t('vision-cta')} target="/" size="large" />
+          <ButtonSecondary text={t('vision-cta')} target="/team/vision" size="large" />
         </div>
       </section>
+      {/*
       <section>
         <div className="content align-left">
           <span className="tag">{t('commitment-tag')}</span>
@@ -185,6 +186,7 @@ export default async function HomePage({ params }: PageProps) {
           <span className="text-columns">{t('commitment-body')}</span>
         </div>
       </section>
+      */}
       <section>
         <div className="content">
           <span className="tag">{t('projects-tag')}</span>

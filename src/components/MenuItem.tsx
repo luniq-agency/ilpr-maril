@@ -23,6 +23,8 @@ interface Props {
 export function MenuItemSingle(props: Props) {
   const op = useRef<OverlayPanel>(null);
 
+  const easeInOutQuart: [number, number, number, number] = [0.76, 0, 0.24, 1];
+
   return (
     <div>
       <span
@@ -37,9 +39,9 @@ export function MenuItemSingle(props: Props) {
           {props.links.map((l, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.15 }}
+              transition={{ duration: 0.6, ease: easeInOutQuart, delay: i * 0.15 }}
             >
               <Link
                 href={l.destination as any}
@@ -59,6 +61,8 @@ export function MenuItemSingle(props: Props) {
 export function MenuItemTripple(props: Props) {
   const op = useRef<OverlayPanel>(null);
 
+  const easeInOutQuart: [number, number, number, number] = [0.76, 0, 0.24, 1];
+
   return (
     <div>
       <span
@@ -70,16 +74,16 @@ export function MenuItemTripple(props: Props) {
       </span>
       <OverlayPanel ref={op}>
         <div className="row gap-xl">
-          <div className="column gap-s">
-            <span className="navlink" style={{ fontWeight: 600 }}>
+          <div className="column gap-s" style={{ minWidth: 190 }}>
+            <span className="navlink no-hover" style={{ fontWeight: 600 }}>
               {props.linksLabel}
             </span>
             {props.links.map((l, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.15 }}
+                transition={{ duration: 0.6, ease: easeInOutQuart, delay: i * 0.15 }}
               >
                 <Link
                   href={l.destination as any}
@@ -91,16 +95,16 @@ export function MenuItemTripple(props: Props) {
               </motion.div>
             ))}
           </div>
-          <div className="column gap-s">
-            <span className="navlink" style={{ fontWeight: 600 }}>
+          <div className="column gap-s" style={{ minWidth: 190 }}>
+            <span className="navlink no-hover" style={{ fontWeight: 600 }}>
               {props?.linksLabel2}
             </span>
             {props.links2?.map((l, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.15 }}
+                transition={{ duration: 0.6, ease: easeInOutQuart, delay: i * 0.2 }}
               >
                 <Link
                   href={l.destination as any}
@@ -112,16 +116,16 @@ export function MenuItemTripple(props: Props) {
               </motion.div>
             ))}
           </div>
-          <div className="column gap-s">
-            <span className="navlink" style={{ fontWeight: 600 }}>
+          <div className="column gap-s" style={{ minWidth: 190 }}>
+            <span className="navlink no-hover" style={{ fontWeight: 600 }}>
               {props?.linksLabel3}
             </span>
             {props.links3?.map((l, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.15 }}
+                transition={{ duration: 0.6, ease: easeInOutQuart, delay: i * 0.25 }}
               >
                 <Link
                   href={l.destination as any}

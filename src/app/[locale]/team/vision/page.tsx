@@ -9,8 +9,7 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Vision');
   return {
     title: t('title'),
@@ -37,7 +36,7 @@ export default async function VisionPage({ params }: PageProps) {
         target="#historie"
       />
       <section>
-        <div className="content" style={{ alignItems: 'baseline' }}>
+        <div className="content align-center">
           <div className="column" style={{ maxWidth: 640 }}>
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />
@@ -46,6 +45,7 @@ export default async function VisionPage({ params }: PageProps) {
             <p>{t('p-3')}</p>
             <p>{t('p-4')}</p>
             <p>{t('p-5')}</p>
+            <p>{t('p-6')}</p>
           </div>
         </div>
       </section>

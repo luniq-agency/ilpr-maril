@@ -1,7 +1,6 @@
 import { Button } from 'primereact/button';
 import styles from './JobCard.module.css';
-import { Link, usePathname } from '@/src/i18n/routing';
-import { useLocale } from 'next-intl';
+import { Link } from '@/src/i18n/routing';
 
 interface Props {
   location: string;

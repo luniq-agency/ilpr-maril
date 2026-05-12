@@ -1,0 +1,111 @@
+.adminInput {
+    border: none;
+}
+
+.editorCalendar,
+.editorDropdown {
+    border: 1px solid var(--border);
+    padding: 0.25rem 12px;
+    width: 100%;
+}
+
+.editorCalendar>input {
+    border: none;
+}
+
+.editorDropdown:focus-visible {
+    outline-color: var(--accent);
+}
+
+.editorSidebar {
+    align-self: flex-start;
+    background-color: white;
+    height: 100%;
+    max-width: 300px;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.page {
+    background-color: var(--background);
+    height: 100vh;
+    width: 100vw;
+}
+
+.pageCentered {
+    align-items: center;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.pageContent {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.pageDashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.accordionContent {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.buttonPrimary {
+    background-color: var(--accent);
+    color: var(--background-white);
+    font-weight: 400;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.dropdown,
+.input,
+.textarea {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.9rem;
+}
+
+.dropdown:focus-visible,
+.input:focus-visible,
+.textarea:focus-visible {
+    outline-color: var(--accent);
+}
+
+.formWrapper {
+    background-color: var(--background-white);
+    border: 1px solid var(--accent);
+    max-width: 640px;
+    padding: 2rem;
+    width: 100%;
+}
+
+.h1 {
+    font-size: 2rem;
+    text-transform: none;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 968px) {
+    .sidebar {
+        display: none;
+    }
+}

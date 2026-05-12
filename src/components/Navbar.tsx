@@ -1,12 +1,10 @@
 'use client';
 
 import { Link } from '@/src/i18n/routing';
-import { OverlayPanel } from 'primereact/overlaypanel';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { LocaleSwitcher } from './LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 import { Sidebar } from 'primereact/sidebar';
-import DropDown from './DropDown';
 import { ButtonPrimary } from './Button';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import SocialMediaIcon from './SocialMediaIcon';
@@ -91,6 +89,10 @@ export default function Navbar(props: NavbarProps) {
     {
       label: t('locations'),
       destination: '/company/locations',
+    },
+    {
+      label: t('faq'),
+      destination: '/company/faq',
     },
   ];
   const itemsPress = [
@@ -251,15 +253,58 @@ export default function Navbar(props: NavbarProps) {
                     {t('travel-agencies')}
                   </Link>
                 </AccordionTab>
+                <AccordionTab header={t('press')} headerClassName="accordion-inner-header">
+                  <Link
+                    href="/clients/business/booking-portals"
+                    className="navlink-mobile"
+                    onClick={() => setVisible(false)}
+                  >
+                    {t('booking-portals')}
+                  </Link>
+                  <Link
+                    href="/clients/business/elderly-care"
+                    className="navlink-mobile"
+                    onClick={() => setVisible(false)}
+                  >
+                    {t('elderly-care')}
+                  </Link>
+                  <Link
+                    href="/clients/business/medical-care"
+                    className="navlink-mobile"
+                    onClick={() => setVisible(false)}
+                  >
+                    {t('medical-care')}
+                  </Link>
+                  <Link
+                    href="/clients/business/travel-agencies"
+                    className="navlink-mobile"
+                    onClick={() => setVisible(false)}
+                  >
+                    {t('travel-agencies')}
+                  </Link>
+                </AccordionTab>
               </Accordion>
             </AccordionTab>
             <AccordionTab headerClassName="navlink-header" header={t('press')}>
+              <Link href="/press" className="navlink-mobile" onClick={() => setVisible(false)}>
+                {t('press')}
+              </Link>
               <Link
-                href="/company/history"
+                href="/press/contact"
                 className="navlink-mobile"
                 onClick={() => setVisible(false)}
               >
-                {t('history')}
+                {t('press-contact')}
+              </Link>
+              <Link
+                href="/press/press-kit"
+                className="navlink-mobile"
+                onClick={() => setVisible(false)}
+              >
+                {t('press-kit')}
+              </Link>
+              <Link href="/press/faq" className="navlink-mobile" onClick={() => setVisible(false)}>
+                {t('press-faq')}
               </Link>
             </AccordionTab>
           </Accordion>
@@ -268,7 +313,7 @@ export default function Navbar(props: NavbarProps) {
           className="column"
           style={{ padding: '2rem', alignItems: 'center', flexGrow: 1, justifyContent: 'center' }}
         >
-          <Image src="/ilpr-maril-logo-gold.svg" alt="ILPR Maril" width={180} />
+          <Image src="/ilpr-maril-logo-gold.svg" alt="ILPR Maril" width={120} height={27} />
           <div style={{ height: '2rem' }} />
           <span
             className="navlink"
@@ -303,7 +348,7 @@ export default function Navbar(props: NavbarProps) {
             src="/ilpr-maril-logo-gold.svg"
             alt="ILPR Maril"
             width={120}
-            height={32}
+            height={27}
             className="logo-navbar"
           />
         </Link>
@@ -321,73 +366,9 @@ export default function Navbar(props: NavbarProps) {
           linksLabel2={t('clients-business')}
           linksLabel3={t('clients-financial')}
         />
-        {/*
-        <DropDown title={t('clients')}>
-          <div className="row gap-l">
-            <div className="column gap-s">
-              <span className="navlink" style={{ fontWeight: 600 }}>
-                Retail
-              </span>
-              <Link href="/clients/retail/tourists" className="navlink">
-                {t('tourists')}
-              </Link>
-              <Link href="/clients/retail/groups" className="navlink">
-                {t('groups')}
-              </Link>
-              <Link href="/clients/retail/patients" className="navlink">
-                {t('patients')}
-              </Link>
-              <Link href="/clients/retail/longterm" className="navlink">
-                {t('longterm')}
-              </Link>
-            </div>
-            <div className="divider-v" />
-            <div className="column gap-s">
-              <span className="navlink" style={{ fontWeight: 600 }}>
-                Financial
-              </span>
-              <Link href="/clients/financial/real-estate-agents" className="navlink">
-                {t('real-estate-agents')}
-              </Link>
-              <Link href="/clients/financial/real-estate-buyers" className="navlink">
-                {t('real-estate-buyers')}
-              </Link>
-              <Link href="/clients/financial/investors" className="navlink">
-                {t('investors')}
-              </Link>
-              <Link href="/clients/financial/banks" className="navlink">
-                {t('banks')}
-              </Link>
-            </div>
-            <div className="divider-v" />
-            <div className="column gap-s">
-              <span className="navlink" style={{ fontWeight: 600 }}>
-                Business
-              </span>
-              <Link href="/clients/business/travel-agencies" className="navlink">
-                {t('travel-agencies')}
-              </Link>
-              <Link href="/clients/business/booking-portals" className="navlink">
-                {t('booking-portals')}
-              </Link>
-              <Link href="/clients/business/elderly-care" className="navlink">
-                {t('elderly-care')}
-              </Link>
-              <Link href="/clients/business/medical-care" className="navlink">
-                {t('medical-care')}
-              </Link>
-            </div>
-          </div>
-        </DropDown>
-
         <Link href="/network" className="navlink">
-          {t('network')}
+          {t('network')}{' '}
         </Link>
-
-        <Link href="/activities" className="navlink">
-          {t('activities')}
-        </Link>
-        */}
         <MenuItemSingle label={t('press')} links={itemsPress} />
       </div>
       <div
