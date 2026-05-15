@@ -48,7 +48,7 @@ export default async function AgenciesPage({ params }: PageProps) {
         </div>
       </section>
       <section>
-        <div className="content">
+        <div className="content" style={{ maxWidth: 800 }}>
           <h2>{t('benefits-h2')}</h2>
           <div style={{ height: '3rem' }} />
           <div className="grid columns-two full-width" style={{ gap: '1.5rem' }}>

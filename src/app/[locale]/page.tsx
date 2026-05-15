@@ -136,10 +136,10 @@ export default async function HomePage({ params }: PageProps) {
         </span>
         <div style={{ height: '2rem' }} />
         <div style={{ zIndex: 4 }}>
-          <ButtonSecondary text={t('hero-cta')} target="/" size="large" />
+          <ButtonSecondary text={t('hero-cta')} target="#vision" size="large" />
         </div>
       </section>
-      <section>
+      <section id="about">
         <div className="content">
           <span className="tag">{t('intro-tag')}</span>
           <h2>{t('intro-h2')}</h2>
@@ -167,7 +167,7 @@ export default async function HomePage({ params }: PageProps) {
           </TabPanel>
         </TabView>
       </section>
-      <section className="section-alternative">
+      <section className="section-alternative" id="vision">
         <div className="content">
           <span className="tag">{t('vision-tag')}</span>
           <span className="quote" style={{ maxWidth: 760, fontSize: '2rem' }}>

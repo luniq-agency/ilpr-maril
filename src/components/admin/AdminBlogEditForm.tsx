@@ -12,6 +12,8 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import { Dropdown } from 'primereact/dropdown';
 import { languages, statusOptions } from '@/src/constants/options';
 import { Calendar } from 'primereact/calendar';
+import Image from 'next/image';
+import { FileUpload } from 'primereact/fileupload';
 
 export interface AdminBlogEditFormHandle {
   save: () => Promise<void>;
@@ -31,6 +33,7 @@ const AdminBlogEditForm = forwardRef<AdminBlogEditFormHandle, Props>(({ blog }, 
     published_date: blog.published_date ?? new Date(),
     slug: blog.slug ?? '',
     status: blog.status ?? '',
+    thumbnail: blog.thumbnail ?? '',
     title: blog.title ?? '',
   });
 
@@ -126,12 +129,16 @@ const AdminBlogEditForm = forwardRef<AdminBlogEditFormHandle, Props>(({ blog }, 
           />
           <div className="spacer-m" />
           <label>Vorschaubild</label>
-          <InputTextarea
-            className={styles.editorDropdown}
-            maxLength={120}
-            value={formData.excerpt}
-            onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
-          />
+          {formData.thumbnail ? (
+            <Image width={252} height={150} alt={formData.title} src={formData.thumbnail} />
+          ) : (
+            <FileUpload
+              chooseLabel="Bild auswählen"
+              mode="basic"
+              style={{ width: '100%', height: 150 }}
+              uploadLabel="Bild hochladen"
+            />
+          )}
         </div>
       </div>
     </>

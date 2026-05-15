@@ -39,6 +39,38 @@ export function AdminBlogTable({ blogs }: Props) {
   );
 }
 
+export function AdminContactTable({ request }: Props) {
+  const router = useRouter();
+
+  const bodyTemplate = (rowData: Job) => {
+    const language = languages.find((t) => t.value === rowData.language);
+    return <span>{language?.label ?? ''}</span>;
+  };
+
+  const selectRow = (e: DataTableRowClickEvent) => {
+    const blog = e.data as Job;
+    router.push(`/admin/contact/${blog.id}`);
+  };
+
+  const statusTemplate = (rowData: Job) => {
+    const status = statusOptions.find((t) => t.value === rowData.language);
+    return <span>{status?.label ?? ''}</span>;
+  };
+
+  return (
+    <DataTable
+      value={request}
+      emptyMessage="Keine Kontaktanfragen gefunden."
+      onRowClick={selectRow}
+    >
+      <Column field="title" header="Name" />
+      <Column body={bodyTemplate} field="language" header="Sprache" />
+      <Column body={bodyTemplate} field="form" header="Kanal" />
+      <Column body={statusTemplate} field="status" header="Datum" />
+    </DataTable>
+  );
+}
+
 export function AdminJobTable({ jobs }: Props) {
   const router = useRouter();
 

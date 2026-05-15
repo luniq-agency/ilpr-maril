@@ -34,9 +34,9 @@ export default async function CompanyPage({ params }: PageProps) {
         intro={t('intro')}
         image="/ilpr-maril-letter-head.png"
         cta={t('cta')}
-        target="#team"
+        target="#concept"
       />
-      <section id="team">
+      <section>
         <div className="content" style={{ maxWidth: 800 }}>
           <div className="column">
             <h2>{t('h2')}</h2>
@@ -53,7 +53,7 @@ export default async function CompanyPage({ params }: PageProps) {
           </div>
         </div>
       </section>
-      <section className="section-alternative">
+      <section className="section-alternative" id="concept">
         <div className="content" style={{ maxWidth: 800 }}>
           <div className="column">
             <h2>{t('approach-h2')}</h2>

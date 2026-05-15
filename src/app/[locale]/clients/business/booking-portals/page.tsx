@@ -29,6 +29,8 @@ export default async function PortalsPage({ params }: PageProps) {
 
   setRequestLocale(locale);
   const t = await getTranslations('Booking Portals');
+  const paragraphs = t.raw('paragraphs') as string[];
+
   return (
     <main>
       <HeroSection
@@ -39,14 +41,13 @@ export default async function PortalsPage({ params }: PageProps) {
         target="#vorteile"
       />
       <section>
-        <div className="content">
+        <div className="content" style={{ maxWidth: 800 }}>
           <div className="column">
             <h2>{t('h2')}</h2>
             <div style={{ height: '1.5rem' }} />
-            <p>{t('p-1')}</p>
-            <p>{t('p-2')}</p>
-            <p>{t('p-3')}</p>
-            <p>{t('p-4')}</p>
+            {paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
             <div style={{ height: '1rem' }} />
             <ButtonPrimary text={t('cta-1')} target="/contact" size="medium" />
           </div>

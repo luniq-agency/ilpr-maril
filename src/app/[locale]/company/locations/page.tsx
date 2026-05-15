@@ -36,19 +36,6 @@ export default async function LocationsPage({ params }: PageProps) {
         cta={t('cta')}
         target="#locations"
       />
-      <section>
-        <div className="content max-w-800">
-          <div className="column">
-            <h2>{t('h2')}</h2>
-            <div style={{ height: '1.5rem' }} />
-            <p>{t('p-1')}</p>
-            <p>{t('p-2')}</p>
-            <p>{t('p-3')}</p>
-            <p>{t('p-4')}</p>
-            <p>{t('p-5')}</p>
-          </div>
-        </div>
-      </section>
       <section id="locations">
         <div className="content max-w-1200">
           <span className="tag">{t('locations-tag')}</span>
@@ -73,6 +60,19 @@ export default async function LocationsPage({ params }: PageProps) {
               image="/locations/miami.jpg"
               delay={1.15}
             />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="content max-w-800">
+          <div className="column">
+            <h2>{t('h2')}</h2>
+            <div style={{ height: '1.5rem' }} />
+            <p>{t('p-1')}</p>
+            <p>{t('p-2')}</p>
+            <p>{t('p-3')}</p>
+            <p>{t('p-4')}</p>
+            <p>{t('p-5')}</p>
           </div>
         </div>
       </section>

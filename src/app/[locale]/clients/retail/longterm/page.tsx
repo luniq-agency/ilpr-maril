@@ -45,7 +45,6 @@ export default async function LongTermPage({ params }: PageProps) {
             <p>{t('p-2')}</p>
             <p>{t('p-3')}</p>
             <p>{t('p-4')}</p>
-            <p>{t('p-5')}</p>
             <div style={{ height: '1.5rem' }} />
             <div className="column gap-s">
               <LinkBlock text={t('vision')} target="/team/vision" />

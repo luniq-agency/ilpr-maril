@@ -33,9 +33,9 @@ export default async function VisionPage({ params }: PageProps) {
         intro={t('intro')}
         image="/vision-ilpr-maril.png"
         cta={t('cta')}
-        target="#historie"
+        target="#ansatz"
       />
-      <section>
+      <section id="ansatz">
         <div className="content align-center">
           <div className="column" style={{ maxWidth: 640 }}>
             <h2>{t('h2')}</h2>

@@ -45,7 +45,6 @@ export default async function BusinessModelPage({ params }: PageProps) {
             <p>{t('p-1')}</p>
             <p>{t('p-2')}</p>
             <p>{t('p-3')}</p>
-            <p>{t('p-4')}</p>
             <div style={{ height: '1rem' }} />
             <ButtonPrimary text={t('cta-1')} target="/contact" size="medium" />
           </div>

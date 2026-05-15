@@ -454,6 +454,10 @@ p {
   order: 2;
 }
 
+.p-button {
+  gap: 0.25rem;
+}
+
 .p-column-header-content {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
   padding: 1rem;
@@ -520,6 +524,16 @@ p {
   background-color: var(--background-white);
   border: 1px solid var(--accent);
   padding: 0.5rem;
+}
+
+.p-fileupload {
+  align-items: center;
+  background: var(--background);
+  border: 2px dashed var(--border);
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .p-menubar .p-menubar-root-list>.p-menuitem:hover>.p-submenu-list {

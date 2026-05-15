@@ -35,10 +35,10 @@ export default function Footer() {
           </span>
           <div className="column" style={{ gap: 12 }}>
             <Link className="navlink" href="/company" style={{ width: 'fit-content' }}>
-              {t('company')}
+              {t('business')}
             </Link>
             <Link className="navlink" href="/company/history" style={{ width: 'fit-content' }}>
-              {t('business')}
+              {t('history')}
             </Link>
             <Link
               className="navlink"

@@ -46,7 +46,6 @@ export default async function GroupsPage({ params }: PageProps) {
             <p>{t('p-3')}</p>
             <p>{t('p-4')}</p>
             <p>{t('p-5')}</p>
-            <p>{t('p-6')}</p>
             <div style={{ height: '1.5rem' }} />
             <div className="column gap-s">
               <LinkBlock text={t('link-vision')} target="/team/vision" />

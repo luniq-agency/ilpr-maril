@@ -40,7 +40,7 @@ export default function AdminSidebar() {
           </AccordionTab>
           <AccordionTab header="Anfragen">
             <div className={`column ${styles.accordionContent}`}>
-              <AdminNavLink target="/admin/anfragen" text="Alle Anfragen" />
+              <AdminNavLink target="/admin/contact" text="Alle Anfragen" />
             </div>
           </AccordionTab>
           {/*
