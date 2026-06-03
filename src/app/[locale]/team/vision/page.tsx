@@ -31,7 +31,7 @@ export default async function VisionPage({ params }: PageProps) {
       <HeroSection
         headline={t('h1')}
         intro={t('intro')}
-        image="/vision-ilpr-maril.png"
+        image="/backgrounds/vision.png"
         cta={t('cta')}
         target="#ansatz"
       />

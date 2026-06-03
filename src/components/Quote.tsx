@@ -9,7 +9,15 @@ export default function Quote(props: Props) {
     <div className="quote-wrapper">
       <Image src="/quotation.png" width={34} height={34} className="quotation-top" alt="" />
       <span className="quote-text">
-        {props.text} <Image src="/quotation.png" width={34} height={34} className="quotation-bottom" alt="" />
+        {props.text}{' '}
+        <Image
+          src="/quotation.png"
+          width={34}
+          height={34}
+          className="quotation-bottom"
+          alt=""
+          style={{ display: 'inline-block', verticalAlign: 'middle', position: 'static' }}
+        />
       </span>
     </div>
   );

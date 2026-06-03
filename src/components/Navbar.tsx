@@ -75,7 +75,7 @@ export default function Navbar(props: NavbarProps) {
   ];
   const itemsCompany = [
     {
-      label: t('company'),
+      label: t('about-us'),
       destination: '/company',
     },
     {

@@ -658,9 +658,10 @@ p {
 }
 
 .quotation-bottom {
-  bottom: -16px;
-  position: absolute;
-  right: -16px;
+  display: inline-block;
+  vertical-align: middle;
+  position: static;
+  margin-left: 4px;
 }
 
 .quote {
@@ -672,7 +673,7 @@ p {
 
 .quote-author {
   font-family: var(--font-headings);
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -725,7 +726,7 @@ section {
 
 .section-hero::after {
   backdrop-filter: contrast(0.8);
-  background: linear-gradient(transparent, rgba(0, 0, 0, .3), rgba(0, 0, 0, 1));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
   content: '';
   height: 100%;
   left: 0;

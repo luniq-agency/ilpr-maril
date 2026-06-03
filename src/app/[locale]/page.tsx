@@ -92,7 +92,7 @@ export default async function HomePage({ params }: PageProps) {
   setRequestLocale(locale);
   const t = await getTranslations('Home');
 
-  const bgImage = `url("/maril-ilpr-home-hero.png")`;
+  const bgImage = `url("/backgrounds/miami.png")`;
 
   const projects = [
     {
