@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { jobLoadBySlug } from '@/src/actions/jobs';
 import SocialMediaIcon from '@/src/components/SocialMediaIcon';
+import DividerBlock from '@/src/components/DividerBlock';
 
 export async function generateMetadata({
   params,
@@ -33,13 +34,13 @@ export default async function JobPage({
 
   return (
     <main>
-      <section style={{ padding: '8rem 0rem 8rem 0rem' }}>
+      <section className='article-page'>
         <div className="content row gap-l">
           <div className="row full-width">
             <div className="column" style={{ maxWidth: 800 }}>
               <h1 className="article-h1">{article.title}</h1>
-              <div className="spacer-m" />
-              <div dangerouslySetInnerHTML={{ __html: article.description }} />
+              <DividerBlock size={2}/>
+              <div className="article-body" dangerouslySetInnerHTML={{ __html: article.description }} style={{marginBlockEnd:16}}/>
             </div>
           </div>
           <div className="news-sidebar">

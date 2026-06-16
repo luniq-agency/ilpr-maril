@@ -25,7 +25,7 @@ const formatDate = (date: Date | string) => {
 
 export default function JobCard(props: Props) {
   return (
-    <Link className={styles.wrapper} href={`/job/${props.slug}` as any}>
+    <Link className={styles.wrapper} href={`/team/jobs/${props.slug}` as any}>
       <div className={styles.row}>
         <span className={styles.meta}>{props.location}</span>
         <span className={styles.meta}>{formatDate(props.date)}</span>
