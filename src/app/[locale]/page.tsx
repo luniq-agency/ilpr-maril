@@ -163,7 +163,7 @@ export default async function HomePage({ params }: PageProps) {
             </div>
           </TabPanel>
           <TabPanel header={t('tab-3-label')}>
-            <Image src="/village-people.jpeg" alt="Maril Team" width={900} height={600} />
+            <Image src="/team/maril-ilpr-team.jpeg" alt="Maril Team" width={900} height={600} />
           </TabPanel>
         </TabView>
       </section>
