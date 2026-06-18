@@ -1,6 +1,7 @@
 import { ButtonSecondary } from './Button';
 
 interface Props {
+  backgroundPosition?: string;
   headline: string;
   intro: string;
   cta: string;
@@ -11,14 +12,13 @@ interface Props {
 export default function HeroSection(props: Props) {
   const bgImage = `url(${props.image})`;
   return (
-    <section className="section-hero" style={{ backgroundImage: bgImage }}>
+    <section className="section-hero" style={{ backgroundImage: bgImage, backgroundPosition: props.backgroundPosition || 'center' }}>
       <h1 style={{ color: 'white', zIndex: 4 }}>{props.headline}</h1>
       <span
         className="intro"
         style={{
           color: 'white',
           maxWidth: 480,
-          textAlign: 'center',
           marginBottom: '1.5rem',
           zIndex: 4,
         }}

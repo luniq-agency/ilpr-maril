@@ -160,6 +160,9 @@ export default function Navbar(props: NavbarProps) {
               <Link href="/team/csr" className="navlink-mobile" onClick={() => setVisible(false)}>
                 {t('csr')}
               </Link>
+              <Link href="/team/jobs" className="navlink-mobile" onClick={() => setVisible(false)}>
+                {t('jobs')}
+              </Link>
             </AccordionTab>
             <AccordionTab headerClassName="navlink-header" header={t('clients')}>
               <Accordion className="accordion-inner">

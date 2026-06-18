@@ -100,6 +100,7 @@ button {
   letter-spacing: 0.05em;
   line-height: 1.1em;
   text-transform: uppercase;
+  text-wrap: nowrap;
   transition: all 0.2s ease-out;
 }
 
@@ -292,6 +293,10 @@ input:focus-visible,
 textarea:focus-visible {
   outline-color: transparent;
   outline-width: 0px !important;
+}
+
+.intro {
+  text-align: center;
 }
 
 .justify-end {
@@ -820,7 +825,7 @@ section {
   width: 100%;
 }
 
-@media only screen and (max-width: 968px) {
+@media only screen and (max-width: 1028px) {
   .accordion-inner>.p-accordion-tab {
     border-bottom: none;
   }
@@ -887,6 +892,10 @@ section {
     font-size: 1.25rem;
   }
 
+  .intro {
+    text-align: left;
+  }
+
   .menu-button-wrapper {
     display: block;
   }
@@ -947,5 +956,15 @@ section {
 
   .text-columns {
     column-count: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size:2rem;
+  }
+
+  .intro {
+    font-size: 14px;
   }
 }

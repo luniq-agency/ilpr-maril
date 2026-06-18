@@ -32,9 +32,10 @@ export default async function TeamPage({ params }: PageProps) {
   return (
     <main>
       <HeroSection
+      backgroundPosition="center center 40%"
         headline={t('h1')}
         intro={t('intro')}
-        image="/backgrounds/team.webp"
+        image="/team/maril-ilpr-team-group.jpeg"
         cta={t('cta')}
         target="#team"
       />
