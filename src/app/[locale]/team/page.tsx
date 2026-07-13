@@ -32,7 +32,7 @@ export default async function TeamPage({ params }: PageProps) {
   return (
     <main>
       <HeroSection
-      backgroundPosition="center center 40%"
+        backgroundPosition="center center 40%"
         headline={t('h1')}
         intro={t('intro')}
         image="/team/maril-ilpr-team-group.jpeg"
@@ -55,8 +55,31 @@ export default async function TeamPage({ params }: PageProps) {
             <div style={{ height: '3rem' }} />
             <div className="grid columns-three gap-xl">
               <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
+              <TeamCard
+                name="Demir Bilal"
+                role="Managing Director"
+                image="/team/demir-bilal.jpeg"
+              />
+              <TeamCard
+                name="Gülcin Yildiz"
+                role="Guest Relations"
+                image="/team/yildiz-guelcin.jpeg"
+              />
+              <TeamCard
+                name="Tülay Kücüklü"
+                role="House Keeping Manager"
+                image="/team/kuecueklue-tuelay.jpeg"
+              />
+              <TeamCard
+                name="Ahmet Parlak"
+                role="Managing Director Logistics"
+                image="/team/parlak-ahmat.jpeg"
+              />
+              <TeamCard
+                name="Orhan Kilicoglu"
+                role="Front Desk Manager"
+                image="/team/kilicoglu-orhan.jpeg"
+              />
             </div>
           </div>
         </div>
