@@ -42,12 +42,14 @@ export default async function CsrPage({ params }: PageProps) {
               image={t('contact-1-image')}
               email={t('contact-1-email')}
             />
+           {/* 
             <PressContactBox
               name={t('contact-2-name')}
               role={t('contact-2-role')}
               image={t('contact-2-image')}
               email={t('contact-2-email')}
             />
+            */}
           </div>
         </div>
       </section>

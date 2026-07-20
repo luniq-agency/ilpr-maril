@@ -3,6 +3,9 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import LinkBlock from '@/src/components/LinkBlock';
+import { useTranslations } from 'next-intl';
+import { linkify } from '@/src/actions/utils';
+import Link from 'next/link';
 
 type PageProps = {
   params: Promise<{
@@ -28,28 +31,21 @@ export default async function CompanyFaq({ params }: PageProps) {
   setRequestLocale(locale);
   const t = await getTranslations('CompanyFAQ');
 
-  const faqItems = [
-    {
-      q: t('q-1'),
-      a: t('a-1'),
-    },
-    {
-      q: t('q-2'),
-      a: t('a-2'),
-    },
-    {
-      q: t('q-2'),
-      a: t('a-2'),
-    },
-    {
-      q: t('q-2'),
-      a: t('a-2'),
-    },
-    {
-      q: t('q-2'),
-      a: t('a-2'),
-    },
-  ];
+  const FAQ_COUNT = 101;
+
+  const faqs = Array.from({ length: FAQ_COUNT }, (_, i) => {
+    const n = i + 1;
+    const linkKey = `faq-${n}-link`;
+    const labelKey = `faq-${n}-link-label`;
+
+    return {
+      question: t(`faq-${n}-q`),
+      answer: t(`faq-${n}-a`),
+      link: t.has(linkKey) ? t(linkKey) : undefined,
+      label: t.has(labelKey) ? t(labelKey) : undefined,
+    };
+  });
+
   return (
     <main style={{ minHeight: '100vh' }}>
       <section style={{ paddingTop: '10rem', paddingBottom: '5rem' }}>
@@ -61,14 +57,19 @@ export default async function CompanyFaq({ params }: PageProps) {
           </div>
           <div className="column full-width gap-l">
             <Accordion>
-              {faqItems.map((f, i) => (
+              {faqs.map((f, i) => (
                 <AccordionTab
-                  header={f.q}
+                  header={f.question}
                   key={i}
                   headerClassName="faq-header"
                   style={{ marginBottom: 8 }}
                 >
-                  <span>{f.a}</span>
+                  <span>{linkify(f.answer)}</span>
+                  {f.link && (
+                    <Link className="faq-link" href={f.link}>
+                      {f.label}{' '}
+                    </Link>
+                  )}
                 </AccordionTab>
               ))}
             </Accordion>

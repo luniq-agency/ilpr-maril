@@ -5,6 +5,11 @@
     text-align: center;
 }
 
+.cardContent {
+    display: flex;
+    flex-direction: column;
+}
+
 .image {
     aspect-ratio: 3/4;
     border: 1px solid var(--accent);

@@ -54,28 +54,38 @@ export default async function TeamPage({ params }: PageProps) {
             </div>
             <div style={{ height: '3rem' }} />
             <div className="grid columns-three gap-xl">
-              <TeamCard name="Semun Oguz" role="CEO" image="/semun-oguz.png" />
               <TeamCard
+                bio="Der Visionär der ILPR Maril"
+                name="Semun Oguz"
+                role="CEO"
+                image="/semun-oguz.png"
+              />
+              <TeamCard
+                bio="Sorgt dafür, dass alles läuft"
                 name="Demir Bilal"
                 role="Managing Director"
                 image="/team/demir-bilal.jpeg"
               />
               <TeamCard
+                bio="Macht PR und pflegt das Image der ILPR Maril"
                 name="Gülcin Yildiz"
-                role="Guest Relations"
+                role="Public Relations"
                 image="/team/yildiz-guelcin.jpeg"
               />
               <TeamCard
+                bio="Bringt Ordnung in das tägliche Geschäft"
                 name="Tülay Kücüklü"
                 role="House Keeping Manager"
                 image="/team/kuecueklue-tuelay.jpeg"
               />
               <TeamCard
+                bio="Ohne seinen Einsatz läuft gar nichts"
                 name="Ahmet Parlak"
                 role="Managing Director Logistics"
                 image="/team/parlak-ahmat.jpeg"
               />
               <TeamCard
+                bio="Der erste Touchpoint für unsere Besucher"
                 name="Orhan Kilicoglu"
                 role="Front Desk Manager"
                 image="/team/kilicoglu-orhan.jpeg"

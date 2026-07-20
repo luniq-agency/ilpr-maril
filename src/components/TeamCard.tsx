@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import styles from './TeamCard.module.css';
+import DividerBlock from './DividerBlock';
 
 interface Props {
+  bio?: string;
   image: string;
   name: string;
   role: string;
@@ -14,6 +16,8 @@ export function TeamCard(props: Props) {
       <div className={styles.cardContent}>
         <h3 className="quote-author">{props.name}</h3>
         <span className={styles.role}>{props.role}</span>
+        <DividerBlock size={1}/>
+        <span>{props.bio}</span>
       </div>
     </div>
   );

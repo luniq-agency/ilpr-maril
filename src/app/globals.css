@@ -194,6 +194,11 @@ button {
   background-color: var(--background-alt);
 }
 
+.faq-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 footer {
   align-items: center;
   border-top: 1px solid var(--accent);
