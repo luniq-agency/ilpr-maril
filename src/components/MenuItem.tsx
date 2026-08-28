@@ -4,17 +4,25 @@ import { OverlayPanel } from 'primereact/overlaypanel';
 import { useRef } from 'react';
 import { Link } from '@/src/i18n/routing';
 import { motion } from 'motion/react';
+import { ComponentProps } from 'react';
+
+type AppHref = ComponentProps<typeof Link>['href'];
 
 interface Link {
   label: string;
   destination: string;
 }
 
+interface MenuItem {
+  label: string;
+  destination: AppHref;
+}
+
 interface Props {
   label: string;
-  links: Link[];
-  links2?: Link[];
-  links3?: Link[];
+  links: MenuItem[];
+  links2?: MenuItem[];
+  links3?: MenuItem[];
   linksLabel?: string;
   linksLabel2?: string;
   linksLabel3?: string;

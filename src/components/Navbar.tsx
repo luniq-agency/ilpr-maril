@@ -10,6 +10,14 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 import SocialMediaIcon from './SocialMediaIcon';
 import { MenuItemSingle, MenuItemTripple } from './MenuItem';
 import Image from 'next/image';
+import { ComponentProps } from 'react';
+
+type AppHref = ComponentProps<typeof Link>['href'];
+
+interface MenuItem {
+  label: string;
+  destination: AppHref;
+}
 
 interface NavbarProps {
   classname: string;
@@ -19,7 +27,7 @@ export default function Navbar(props: NavbarProps) {
   const [visible, setVisible] = useState(false);
   const t = useTranslations('Nav');
 
-  const itemsClientsBusiness = [
+  const itemsClientsBusiness: MenuItem[] = [
     {
       label: t('travel-agencies'),
       destination: '/clients/business/travel-agencies',
@@ -37,7 +45,7 @@ export default function Navbar(props: NavbarProps) {
       destination: '/clients/business/medical-care',
     },
   ];
-  const itemsClientsFinancial = [
+  const itemsClientsFinancial: MenuItem[] = [
     {
       label: t('real-estate-agents'),
       destination: '/clients/financial/real-estate-agents',
@@ -55,7 +63,7 @@ export default function Navbar(props: NavbarProps) {
       destination: '/clients/financial/banks',
     },
   ];
-  const itemsClientsRetail = [
+  const itemsClientsRetail: MenuItem[] = [
     {
       label: t('tourists'),
       destination: '/clients/retail/tourists',
@@ -73,7 +81,7 @@ export default function Navbar(props: NavbarProps) {
       destination: '/clients/retail/longterm',
     },
   ];
-  const itemsCompany = [
+  const itemsCompany: MenuItem[] = [
     {
       label: t('about-us'),
       destination: '/company',
@@ -91,11 +99,15 @@ export default function Navbar(props: NavbarProps) {
       destination: '/company/locations',
     },
     {
+      label: 'Scientific Research',
+      destination: '/company/scientific-research',
+    },
+    {
       label: t('faq'),
       destination: '/company/faq',
     },
   ];
-  const itemsPress = [
+  const itemsPress: MenuItem[] = [
     {
       label: t('press'),
       destination: '/press',
@@ -113,7 +125,7 @@ export default function Navbar(props: NavbarProps) {
       destination: '/press/faq',
     },
   ];
-  const itemsTeam = [
+  const itemsTeam: MenuItem[] = [
     {
       label: t('team'),
       destination: '/team',
@@ -138,177 +150,38 @@ export default function Navbar(props: NavbarProps) {
         <div className="column gap-s align-center justify-center" id="menu-mobile">
           <Accordion>
             <AccordionTab headerClassName="navlink-header" header={t('company')}>
-              <Link
-                href="/company/history"
-                className="navlink-mobile"
-                onClick={() => setVisible(false)}
-              >
-                {t('history')}
-              </Link>
+              {itemsCompany.map((m, i) => (
+                <Link href={m.destination}>{m.label}</Link>
+              ))}
             </AccordionTab>
             <AccordionTab headerClassName="navlink-header" header={t('team')}>
-              <Link href="/team" className="navlink-mobile" onClick={() => setVisible(false)}>
-                {t('team')}
-              </Link>
-              <Link
-                href="/team/vision"
-                className="navlink-mobile"
-                onClick={() => setVisible(false)}
-              >
-                {t('vision')}
-              </Link>
-              <Link href="/team/csr" className="navlink-mobile" onClick={() => setVisible(false)}>
-                {t('csr')}
-              </Link>
-              <Link href="/team/jobs" className="navlink-mobile" onClick={() => setVisible(false)}>
-                {t('jobs')}
-              </Link>
+              {itemsTeam.map((m, i) => (
+                <Link href={m.destination}>{m.label}</Link>
+              ))}
             </AccordionTab>
             <AccordionTab headerClassName="navlink-header" header={t('clients')}>
               <Accordion className="accordion-inner">
                 <AccordionTab header="Retail" headerClassName="accordion-inner-header">
-                  <Link
-                    href="/clients/retail/tourists"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('tourists')}
-                  </Link>
-                  <Link
-                    href="/clients/retail/groups"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('groups')}
-                  </Link>
-                  <Link
-                    href="/clients/retail/patients"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('patients')}
-                  </Link>
-                  <Link
-                    href="/clients/retail/longterm"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('longterm')}
-                  </Link>
+                  {itemsClientsRetail.map((m, i) => (
+                    <Link href={m.destination}>{m.label}</Link>
+                  ))}
                 </AccordionTab>
                 <AccordionTab header="Financial" headerClassName="accordion-inner-header">
-                  <Link
-                    href="/clients/financial/banks"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('banks')}
-                  </Link>
-                  <Link
-                    href="/clients/financial/investors"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('investors')}
-                  </Link>
-                  <Link
-                    href="/clients/financial/real-estate-agents"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('real-estate-agents')}
-                  </Link>
-                  <Link
-                    href="/clients/financial/real-estate-buyers"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('real-estate-buyers')}
-                  </Link>
+                  {itemsClientsFinancial.map((m, i) => (
+                    <Link href={m.destination}>{m.label}</Link>
+                  ))}
                 </AccordionTab>
                 <AccordionTab header="Business" headerClassName="accordion-inner-header">
-                  <Link
-                    href="/clients/business/booking-portals"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('booking-portals')}
-                  </Link>
-                  <Link
-                    href="/clients/business/elderly-care"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('elderly-care')}
-                  </Link>
-                  <Link
-                    href="/clients/business/medical-care"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('medical-care')}
-                  </Link>
-                  <Link
-                    href="/clients/business/travel-agencies"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('travel-agencies')}
-                  </Link>
-                </AccordionTab>
-                <AccordionTab header={t('press')} headerClassName="accordion-inner-header">
-                  <Link
-                    href="/clients/business/booking-portals"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('booking-portals')}
-                  </Link>
-                  <Link
-                    href="/clients/business/elderly-care"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('elderly-care')}
-                  </Link>
-                  <Link
-                    href="/clients/business/medical-care"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('medical-care')}
-                  </Link>
-                  <Link
-                    href="/clients/business/travel-agencies"
-                    className="navlink-mobile"
-                    onClick={() => setVisible(false)}
-                  >
-                    {t('travel-agencies')}
-                  </Link>
+                  {itemsClientsBusiness.map((m, i) => (
+                    <Link href={m.destination}>{m.label}</Link>
+                  ))}
                 </AccordionTab>
               </Accordion>
             </AccordionTab>
             <AccordionTab headerClassName="navlink-header" header={t('press')}>
-              <Link href="/press" className="navlink-mobile" onClick={() => setVisible(false)}>
-                {t('press')}
-              </Link>
-              <Link
-                href="/press/contact"
-                className="navlink-mobile"
-                onClick={() => setVisible(false)}
-              >
-                {t('press-contact')}
-              </Link>
-              <Link
-                href="/press/press-kit"
-                className="navlink-mobile"
-                onClick={() => setVisible(false)}
-              >
-                {t('press-kit')}
-              </Link>
-              <Link href="/press/faq" className="navlink-mobile" onClick={() => setVisible(false)}>
-                {t('press-faq')}
-              </Link>
+              {itemsPress.map((m, i) => (
+                <Link href={m.destination}>{m.label}</Link>
+              ))}
             </AccordionTab>
           </Accordion>
         </div>

@@ -37,6 +37,10 @@ export const routing = defineRouting({
       en: '/company/faq',
       de: '/unternehmen/faq',
     },
+    '/company/scientific-research': {
+      en: '/company/scientific-research',
+      de: '/unternehmen/scientific-research',
+    },
     '/team': {
       en: '/team',
       de: '/team',

@@ -1,0 +1,20 @@
+.cardHeadline {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.cardMeta {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.cardThumbnail {
+  aspect-ratio: 3/4;
+  border: 1px solid var(--accent);
+  margin-bottom: 1rem;
+  max-height: 360px;
+  object-fit: cover;
+  width: 100%;
+}
