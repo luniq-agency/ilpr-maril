@@ -1,13 +1,14 @@
 .cardHeadline {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.2em;
     margin-bottom: 0.5rem;
     text-align: left;
 }
 
 .cardMeta {
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    font-size: 0.7rem;
+    line-height: 1.2em;
+    text-transform: none;
 }
 
 .cardThumbnail {
