@@ -6,6 +6,7 @@ import { TeamCard } from '@/src/components/TeamCard';
 import ResearchCard from '@/src/components/research/ResearchCard';
 import Column from '@/src/components/layout/Column';
 import Grid from '@/src/components/layout/Grid';
+import DividerBlock from '@/src/components/DividerBlock';
 
 type PageProps = {
   params: Promise<{
@@ -45,13 +46,11 @@ export default async function ScientificResearchPage({ params }: PageProps) {
       <section id="research">
         <div className="content max-w-1000">
           <div className="column">
-            {/*
             <h2>{t('intro-h2')}</h2>
             <div style={{ height: '1.5rem' }} />
             {paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
-              */}
             <div style={{ height: '3rem' }} />
             <div className="column align-center">
               <span className="tag">{t('tag')}</span>
@@ -107,7 +106,11 @@ export default async function ScientificResearchPage({ params }: PageProps) {
               <Column>
                 <h3>{t('category-4-name')}</h3>
                 <Grid columns={3}>
-                  <ResearchCard author="GEKA" headline={t('paper-7-name')} thumbnail="/palm-trees.jpg" />
+                  <ResearchCard
+                    author="GEKA"
+                    headline={t('paper-7-name')}
+                    thumbnail="/palm-trees.jpg"
+                  />
                   <ResearchCard
                     author="Günal Bilek"
                     headline={t('paper-8-name')}
@@ -147,6 +150,8 @@ export default async function ScientificResearchPage({ params }: PageProps) {
               </Column>
             </Column>
           </div>
+          <DividerBlock size={2}/>
+          <span>{t('addon')}</span>
         </div>
       </section>
     </main>

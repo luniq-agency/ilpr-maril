@@ -734,16 +734,25 @@
     "h1": "Datenschutzerklärung"
   },
   "ScientificResearch": {
-    "title": "Scientific Research | ILPR Maril",
+    "title": "Wissenschaftliche Arbeiten | ILPR Maril",
     "description": "",
-    "h1": "Scientific Research",
+    "h1": "Studies & Resources",
     "intro": "",
     "cta": "Zu den Studien",
     "": "",
-    "tag": "Scientific Research",
+    "tag": "Studies & Research",
     "h2": "Wissenschaftliche Arbeiten",
-    "intro-h2": "Hier finden Sie wissenschaftliche Studien.",
-    "paragraphs": [""],
+    "intro-h2": "Wissenschaftliche Studien & Analysen",
+    "paragraphs": [
+      "Etwas richtig Gutes tun und daran auch noch echt viel Geld verdienen - wie funktioniert das?",
+      "Eigentlich ist es gar nicht so schwer, erfordert jedoch eine komplexe Infrastruktur - genau über diese verfügt Semun Oguz und Maril und dies ermöglicht es dem Team, den Investoren und Partnern von Maril, das Geschäftsmodell bereits heute erfolgreich umzusetzen und zukünftig noch weiter national und international zu skalieren.",
+      "Unser Konzept der Integration eines barrierefreien Gesundheitsresorts mit einem Fokus auf körperlich und geistig stark eingeschränkten Personen und deren Angehörigen stützt sich nicht nur auf jahrelange praktische Erfahrung, sondern auch auf eine fundierte wissenschaftliche Grundlage. In diesem Bereich stellen wir Ihnen eine Auswahl an Studien, Fachpublikationen und offiziellen Statistiken zur Verfügung, die sich mit den gesundheitlichen Wirkungen von mediterranem Klima, Meer und gezielten Kuraufenthalten befassen.",
+      "Renommierte wissenschaftliche Journale und internationale Institutionen liefern belastbare Erkenntnisse darüber, wie Sonne, Meerwasser und ein ausgewogenes mediterranes Umfeld zur Erholung von körperlich und geistig beeinträchtigten Menschen beitragen können. Ergänzend zeigen aktuelle Marktanalysen und offizielle Prognosen die wachsende Bedeutung des barrierefreien Reisens sowie die positiven Zukunftsaussichten des türkischen Tourismus, insbesondere an der Ägäisküste.",
+      "Grundsätzlich ist das Modell in wenigen kurzen Sätzen sehr einfach erklärt - die ausführlichen Erläuterungen und wirtschaftlichen Kennzahlen liefern die untenstehenden wissenschaftlichen Publikationen: Der Erwerb von Land, die Errichtung und der Betrieb von Luxus-Resorts und Hotels ist grundsätzlich schon ein hochrentables Geschäft.",
+      "Wenn die Zielgruppe jedoch nicht nur normale Reisende umfasst, sondern auch Kurgäste, Langzeitbesucher, Regenerationsaufenthalte sowie körperlich und geistig beeinträchtigten Menschen beinhaltet, sind sowohl der gesellschaftliche Nutzen als auch die Verdienstmöglichkeiten signifikant höher. Die Veralterung der europäischen, amerikanischen, japanischen, türkischen und vielen anderen Gesellschaften in Kombination mit niedriger Geburtenrate (ein Problem der meisten industrialisierten Länder) und einer rasch zunehmende Anzahl von Zivilisationskrankheiten führt zu einer klar absehbaren demografischen Entwicklung:",
+      "In den nächsten 5 Jahren ist von einem immens wachsenden Bedarf von Hotels und Sanatorien mit dem Fokus auf alten, mobilitätseingeschränkten und pflegebedürftigen Personen und deren Angehörigen auszugehen.",
+      "Stöbern Sie gerne durch die hier aufgeführten wissenschaftlichen Arbeiten, Research Papers und anderen Quellen."
+    ],
     "category-1-name": "Erholung Kranker durch warme Meeresregionen",
     "paper-1-name": "Erholung Kranker durch warme Meeresregionen",
     "paper-2-name": "A narrative review of thalassotherapy and the health benefits of seawater and coastal climates",
@@ -761,7 +770,8 @@
     "paper-10-name": "Türkiye’s Travel & Tourism to Reach a Record ₺5.2TN This Year",
     "category-6-name": "Reiseentwicklung für Menschen mit Einschränkungen",
     "paper-11-name": "Assessing the value and market attractiveness of the accessible tourism industry in Europe",
-    "paper-12-name": "Promoting accessible tourism for all"
+    "paper-12-name": "Promoting accessible tourism for all",
+    "addon": "Uns ist Transparenz wichtig: Wo wissenschaftlich belegte Studien vorliegen, kennzeichnen wir diese entsprechend – ebenso wie offizielle Branchenprognosen oder andere Quellen."
   },
   "Team": {
     "title": "Unser Team | ILPR Maril",

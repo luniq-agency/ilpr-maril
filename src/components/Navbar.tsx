@@ -99,7 +99,7 @@ export default function Navbar(props: NavbarProps) {
       destination: '/company/locations',
     },
     {
-      label: 'Scientific Research',
+      label: 'Studies & Resources',
       destination: '/company/scientific-research',
     },
     {
