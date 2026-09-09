@@ -55,39 +55,39 @@ export default async function TeamPage({ params }: PageProps) {
             <div style={{ height: '3rem' }} />
             <div className="grid columns-three gap-xl">
               <TeamCard
-                bio="Der Visionär der ILPR Maril"
+                bio={t('team-bio-1')}
                 name="Semun Oguz"
-                role="CEO"
+                role={t('team-role-1')}
                 image="/semun-oguz.png"
               />
               <TeamCard
-                bio="Sorgt dafür, dass alles läuft"
+                bio={t('team-bio-2')}
                 name="Demir Bilal"
-                role="Managing Director"
+                role={t('team-role-2')}
                 image="/team/demir-bilal.jpeg"
               />
               <TeamCard
-                bio="Macht PR und pflegt das Image der ILPR Maril"
+                bio={t('team-bio-3')}
                 name="Gülcin Yildiz"
-                role="Public Relations"
+                role={t('team-role-3')}
                 image="/team/yildiz-guelcin.jpeg"
               />
               <TeamCard
-                bio="Bringt Ordnung in das tägliche Geschäft"
+                bio={t('team-bio-4')}
                 name="Tülay Kücüklü"
-                role="House Keeping Manager"
+                role={t('team-role-4')}
                 image="/team/kuecueklue-tuelay.jpeg"
               />
               <TeamCard
-                bio="Ohne seinen Einsatz läuft gar nichts"
+                bio={t('team-bio-5')}
                 name="Ahmet Parlak"
-                role="Managing Director Logistics"
+                role={t('team-role-5')}
                 image="/team/parlak-ahmat.jpeg"
               />
               <TeamCard
-                bio="Der erste Touchpoint für unsere Besucher"
+                bio={t('team-bio-6')}
                 name="Orhan Kilicoglu"
-                role="Front Desk Manager"
+                role={t('team-role-6')}
                 image="/team/kilicoglu-orhan.jpeg"
               />
             </div>
